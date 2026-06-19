@@ -1,0 +1,263 @@
+# Lookup map for `:::video <slug>` handbook embeds.
+#
+# Each slug maps to a YouTube video that gets rendered as a thumbnail
+# (via i.ytimg.com) with a play overlay in the handbook prose; clicking
+# the thumbnail opens a lightbox dialog with an embedded YouTube player.
+#
+# Why a lookup file (vs. raw iframes in markdown):
+#  - Re-recording a video means swapping one ID here, not chasing
+#    iframe markup across every page that references it.
+#  - Multiple pages can reference the same video by the same stable
+#    slug (e.g. drafting-and-sending + bookings overview both
+#    embedding the contract video).
+#  - Videos with `youtube_id: null` render as a "Coming soon" tile,
+#    so handbook pages can reference a video before it's uploaded.
+#
+# The slug used here is conventionally the training/scripts/<slug>.yml
+# basename, so the markdown block + script + screencast all share one
+# name.
+
+dashboard-overview:
+  youtube_id: NriPHLWy8p0
+  title: Your dashboard at a glance
+  duration_seconds: 99
+
+help-and-whats-new:
+  youtube_id: jU3QOuuYhuQ
+  title: Getting help & What's New
+  duration_seconds: 75
+
+coi-overview:
+  youtube_id: null
+  title: Tracking insurance certificates
+  duration_seconds: 80
+
+draft-contract:
+  youtube_id: 5_1fjIwywiY
+  title: Draft and send a contract
+  duration_seconds: 149
+
+pipeline-overview:
+  youtube_id: dUsU8d0Sw_4
+  title: Work the sales pipeline
+  duration_seconds: 117
+
+pipeline-tuning:
+  youtube_id: sE73KYdQ6bE
+  title: Tune the pipeline (admin)
+  duration_seconds: 100
+
+floor-plan-auto-layout:
+  youtube_id: BvzZur-Y7y0
+  title: Auto-layout a floor plan
+  duration_seconds: 127
+
+clients-overview:
+  youtube_id: To87VqfiBWo
+  title: Manage clients and contacts
+  duration_seconds: 96
+
+manage-space-kinds:
+  youtube_id: APey7euqAgg
+  title: Managing space kinds
+  duration_seconds: 76
+
+add-a-space:
+  youtube_id: 9PFBis_MeaQ
+  title: Adding a space to a venue
+  duration_seconds: 54
+
+space-detail:
+  youtube_id: 7cxEi0rmx9Y
+  title: The space detail page
+  duration_seconds: 57
+
+work-orders:
+  youtube_id: 5fNawUyIPC8
+  title: Work orders, end to end
+  duration_seconds: 74
+
+inventory:
+  youtube_id: KS0kptWDpPg
+  title: Equipment inventory
+  duration_seconds: 68
+
+recurring-work-orders:
+  youtube_id: 4D_guHd72EM
+  title: Recurring work orders
+  duration_seconds: 53
+
+ops-overview:
+  youtube_id: XT8PPme4oGU
+  title: 'Operations: three views, one schedule'
+  duration_seconds: 70
+
+create-booking:
+  youtube_id: XXPoknpfGDk
+  title: Create a booking (direct or from a lead)
+  duration_seconds: 89
+
+assign-booking-staff:
+  youtube_id: g8cy4Urtows
+  title: Assign staff to a booking
+  duration_seconds: 32
+
+payment-schedule:
+  youtube_id: qC6R2Do_-ow
+  title: Set a booking payment schedule
+  duration_seconds: 37
+
+run-of-show:
+  youtube_id: _Q4IUBee-uA
+  title: Build a booking's run-of-show
+  duration_seconds: 67
+
+manage-run-of-show-templates:
+  youtube_id: wlCUHHaV310
+  title: Managing run-of-show templates
+  duration_seconds: 81
+
+settle-a-booking:
+  youtube_id: 7XEojaKGZBY
+  title: Generate a settlement document
+  duration_seconds: 35
+
+event-narrative:
+  youtube_id: 5PuTIW8VCJE
+  title: Keep an event narrative
+  duration_seconds: 41
+
+exhibitors-admin:
+  youtube_id: _oqz7UZAtz8
+  title: 'Exhibitors: events, orders, and payments'
+  duration_seconds: 116
+
+journal-entries:
+  youtube_id: 2-xJJf9TY-s
+  title: "Post and reverse a journal entry"
+  duration_seconds: 89
+
+account-ledger:
+  youtube_id: n8WEsIgyv8g
+  title: "Account ledger and trial balance"
+  duration_seconds: 86
+
+ledger-export:
+  youtube_id: _0NlOwUtttU
+  title: "Export journal entries to the GL"
+  duration_seconds: 87
+
+invoicing:
+  youtube_id: -yG7LEHRLVs
+  title: "Invoices: issue, collect, resolve"
+  duration_seconds: 79
+
+chart-of-accounts:
+  youtube_id: EB4Q5zdo4_A
+  title: "Chart of Accounts & Funds"
+  duration_seconds: 89
+
+space-constraints:
+  youtube_id: XaDKvhL3OrE
+  title: "Floor-plan constraints"
+  duration_seconds: 61
+
+getting-started:
+  youtube_id: -BFdupPAOOI
+  title: "Welcome to Velsa - a quick tour"
+  duration_seconds: 85
+
+report-builder:
+  youtube_id: 3wkk1UIhKi8
+  title: "Build an ad-hoc report"
+  duration_seconds: 70
+
+exhibitor-portal:
+  youtube_id: t_bA6oENBPY
+  title: "The exhibitor portal"
+  duration_seconds: 70
+
+venue-handbook:
+  youtube_id: PoIaEguBZRk
+  title: Publish a venue exhibitor handbook
+  duration_seconds: 53
+
+exhibitor-permits:
+  youtube_id: ZwpsSdMNYnM
+  title: "Review exhibitor activity permits"
+  duration_seconds: 58
+
+branding-images:
+  youtube_id: LHndGO2cepU
+  title: "Manage welcome & sign-in background images"
+  duration_seconds: 50
+
+reading-reports:
+  youtube_id: dxFMX9KGN2I
+  title: "Reading a report"
+  duration_seconds: 55
+
+financial-statements:
+  youtube_id: FCF19Qsy8wo
+  title: "Financial statements"
+  duration_seconds: 55
+
+pricing-admin:
+  youtube_id: S_FMLQ14yNU
+  title: "Pricing - rate cards & packages"
+  duration_seconds: 55
+
+sales-goals-admin:
+  youtube_id: 9vfgZVayz98
+  title: "Set sales goals"
+  duration_seconds: 55
+
+fiscal-year-budgets:
+  youtube_id: lV6BQzLGyP4
+  title: "Fiscal-year budgets"
+  duration_seconds: 55
+
+system-settings-venue-isolation:
+  youtube_id: aSQJjm670Lw
+  title: "Venue data isolation"
+  duration_seconds: 55
+
+audit-rules:
+  youtube_id: XfnEhfUPW8A
+  title: "Audit alert rules"
+  duration_seconds: 52
+
+strong-rbac:
+  youtube_id: W2FbDC75SaA
+  title: "Roles, permissions & venue-scoped access"
+  duration_seconds: 55
+
+exhibitor-advance-rates:
+  youtube_id: RpYEcsNazJs
+  title: "Exhibitor advance-rate pricing"
+  duration_seconds: 55
+
+equipment-catalog-editor:
+  youtube_id: uDQK4RXJQw0
+  title: "Equipment catalog editor"
+  duration_seconds: 55
+
+managing-document-attachments:
+  youtube_id: v30944KMkfI
+  title: "Document attachments"
+  duration_seconds: 55
+
+export-contract-as-word:
+  youtube_id: dkuO2LyuLK0
+  title: "Export a contract to Word"
+  duration_seconds: 50
+
+booking-clone:
+  youtube_id: xDQlvm8R-Do
+  title: "Re-book an event with clone"
+  duration_seconds: 55
+
+floor-plan-export:
+  youtube_id: 5U7DHSp3qM0
+  title: "Floor plan upload, export, and print"
+  duration_seconds: 50

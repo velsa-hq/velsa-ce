@@ -1,0 +1,596 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+/* Inter font (self-hosted via @fontsource). Loaded here so the
+   --font-sans variable below actually renders Inter. To swap in a
+   different font: install its @fontsource package and replace this
+   @import + update --font-sans below. */
+@import '@fontsource/inter';
+
+/* Radix Colors - Iris scale (purple-violet, matches the TweakCN
+   primary). 12-step light + dark with built-in contrast tuning.
+   Variable re-bindings live in the RADIX COLORS section near the
+   bottom of this file. */
+/* Default accent - Iris (purple-violet). Alpha variants are
+   imported for transparency-aware UI (focus rings, hovers). */
+@import '@radix-ui/colors/iris.css';
+@import '@radix-ui/colors/iris-dark.css';
+@import '@radix-ui/colors/iris-alpha.css';
+@import '@radix-ui/colors/iris-dark-alpha.css';
+
+/* Selectable accent palettes - user picks one via Settings >
+   Appearance > Accent palette. Each adds ~3KB; the runtime hook
+   toggles a `.palette-{name}` class on <html> that re-binds the
+   theme tokens at the bottom of this file. Skip the alpha variants
+   for these to keep the bundle lean. */
+@import '@radix-ui/colors/tomato.css';
+@import '@radix-ui/colors/tomato-dark.css';
+@import '@radix-ui/colors/red.css';
+@import '@radix-ui/colors/red-dark.css';
+@import '@radix-ui/colors/crimson.css';
+@import '@radix-ui/colors/crimson-dark.css';
+@import '@radix-ui/colors/pink.css';
+@import '@radix-ui/colors/pink-dark.css';
+@import '@radix-ui/colors/plum.css';
+@import '@radix-ui/colors/plum-dark.css';
+@import '@radix-ui/colors/purple.css';
+@import '@radix-ui/colors/purple-dark.css';
+@import '@radix-ui/colors/violet.css';
+@import '@radix-ui/colors/violet-dark.css';
+@import '@radix-ui/colors/indigo.css';
+@import '@radix-ui/colors/indigo-dark.css';
+@import '@radix-ui/colors/blue.css';
+@import '@radix-ui/colors/blue-dark.css';
+@import '@radix-ui/colors/sky.css';
+@import '@radix-ui/colors/sky-dark.css';
+@import '@radix-ui/colors/cyan.css';
+@import '@radix-ui/colors/cyan-dark.css';
+@import '@radix-ui/colors/teal.css';
+@import '@radix-ui/colors/teal-dark.css';
+@import '@radix-ui/colors/mint.css';
+@import '@radix-ui/colors/mint-dark.css';
+@import '@radix-ui/colors/green.css';
+@import '@radix-ui/colors/green-dark.css';
+@import '@radix-ui/colors/grass.css';
+@import '@radix-ui/colors/grass-dark.css';
+@import '@radix-ui/colors/lime.css';
+@import '@radix-ui/colors/lime-dark.css';
+@import '@radix-ui/colors/yellow.css';
+@import '@radix-ui/colors/yellow-dark.css';
+@import '@radix-ui/colors/amber.css';
+@import '@radix-ui/colors/amber-dark.css';
+@import '@radix-ui/colors/orange.css';
+@import '@radix-ui/colors/orange-dark.css';
+@import '@radix-ui/colors/brown.css';
+@import '@radix-ui/colors/brown-dark.css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+/* =============================================================
+   THEME WORKFLOW
+   =============================================================
+   This file is structured so two external tools drop in cleanly.
+
+   --- A. TweakCN (https://tweakcn.com) - primary theme editor ---
+   1. Open tweakcn.com, start from a preset or "Copy current".
+   2. Tweak colors / radius / typography / shadows in their GUI.
+   3. Click Code (top-right) -> switch to Tailwind v4 -> copy the
+      ENTIRE output. It contains three blocks:
+         :root          <- light-mode values
+         .dark          <- dark-mode values
+         @theme inline  <- Tailwind v4 variable mapping
+   4. Replace EVERYTHING between the matching markers below
+      with what TweakCN gave you. Three paste zones, one per block.
+   5. If TweakCN picked a font you don't already have loaded
+      (Inter / Merriweather / JetBrains Mono / etc.):
+         npm install @fontsource/{font-slug}
+      then add `@import '@fontsource/{font-slug}';` at the top of
+      this file alongside the existing @fontsource/inter line.
+   6. `npm run build` to bake the new values into the bundle.
+
+   --- B. Radix Colors (radix-ui.com/colors) - for accent swaps ---
+   The @radix-ui/colors npm package (already installed) ships
+   canonical 12-step scales with paired light/dark variants and
+   built-in contrast. To use:
+   1. Pick a scale from radix-ui.com/colors (e.g., Blue, Teal,
+      Amber). Each scale has steps 1-12 plus an alpha variant.
+   2. Add @import lines for the scale CSS at the top of this file,
+      e.g.   @import '@radix-ui/colors/blue.css';
+             @import '@radix-ui/colors/blue-dark.css';
+   3. In the RADIX section near the bottom of this file, uncomment
+      the variable re-bindings and adjust step numbers. The Radix
+      step convention:
+         step  9 = solid-saturated brand color (primary)
+         step 10 = hover state
+         step 11 = readable text on the surface
+         step  3 = subtle backgrounds
+         step  6 = subtle borders
+         step  7 = focus rings
+   4. Same `npm run build` to apply.
+
+   The two tools COMPOSE - TweakCN handles the structural theme;
+   Radix handles the brand-color swap. They edit the same variable
+   set so last-write-wins per variable. The Radix block sits AFTER
+   the TweakCN blocks in this file so Radix accents win when both
+   define the same key.
+   ============================================================= */
+
+/* ===================== TWEAKCN: PASTE LIGHT MODE BELOW ===================== */
+:root {
+    --background: oklch(0.9842 0.0034 247.8575);
+    --foreground: oklch(0.2795 0.0368 260.031);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.2795 0.0368 260.031);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.2795 0.0368 260.031);
+    --primary: oklch(0.5854 0.2041 277.1173);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.9276 0.0058 264.5313);
+    --secondary-foreground: oklch(0.3729 0.0306 259.7328);
+    --muted: oklch(0.967 0.0029 264.5419);
+    --muted-foreground: oklch(0.551 0.0234 264.3637);
+    --accent: oklch(0.9299 0.0334 272.7879);
+    --accent-foreground: oklch(0.3729 0.0306 259.7328);
+    --destructive: oklch(0.6368 0.2078 25.3313);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.8717 0.0093 258.3382);
+    --input: oklch(0.8717 0.0093 258.3382);
+    --ring: oklch(0.5854 0.2041 277.1173);
+    --chart-1: oklch(0.5854 0.2041 277.1173);
+    --chart-2: oklch(0.5106 0.2301 276.9656);
+    --chart-3: oklch(0.4568 0.2146 277.0229);
+    --chart-4: oklch(0.3984 0.1773 277.3662);
+    --chart-5: oklch(0.3588 0.1354 278.6973);
+    --sidebar: oklch(0.967 0.0029 264.5419);
+    --sidebar-foreground: oklch(0.2795 0.0368 260.031);
+    --sidebar-primary: oklch(0.5854 0.2041 277.1173);
+    --sidebar-primary-foreground: oklch(1 0 0);
+    --sidebar-accent: oklch(0.9299 0.0334 272.7879);
+    --sidebar-accent-foreground: oklch(0.3729 0.0306 259.7328);
+    --sidebar-border: oklch(0.8717 0.0093 258.3382);
+    --sidebar-ring: oklch(0.5854 0.2041 277.1173);
+    --font-sans: Inter, sans-serif;
+    --font-serif: Merriweather, serif;
+    --font-mono: JetBrains Mono, monospace;
+    --radius: 0.5rem;
+    --shadow-x: 0px;
+    --shadow-y: 4px;
+    --shadow-blur: 8px;
+    --shadow-spread: -1px;
+    --shadow-opacity: 0.1;
+    --shadow-color: hsl(0 0% 0%);
+    --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-sm:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+    --shadow:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+    --shadow-md:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 4px 6px -2px hsl(0 0% 0% / 0.1);
+    --shadow-xl:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1),
+        0px 8px 10px -2px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+}
+/* ===================== END TWEAKCN LIGHT ===================== */
+
+/* ===================== TWEAKCN: PASTE DARK MODE BELOW ===================== */
+.dark {
+    --background: oklch(0.2077 0.0398 265.7549);
+    --foreground: oklch(0.9288 0.0126 255.5078);
+    --card: oklch(0.2795 0.0368 260.031);
+    --card-foreground: oklch(0.9288 0.0126 255.5078);
+    --popover: oklch(0.2795 0.0368 260.031);
+    --popover-foreground: oklch(0.9288 0.0126 255.5078);
+    --primary: oklch(0.6801 0.1583 276.9349);
+    --primary-foreground: oklch(0.2077 0.0398 265.7549);
+    --secondary: oklch(0.3351 0.0331 260.912);
+    --secondary-foreground: oklch(0.8717 0.0093 258.3382);
+    --muted: oklch(0.2427 0.0381 259.9437);
+    --muted-foreground: oklch(0.7137 0.0192 261.3246);
+    --accent: oklch(0.3729 0.0306 259.7328);
+    --accent-foreground: oklch(0.8717 0.0093 258.3382);
+    --destructive: oklch(0.6368 0.2078 25.3313);
+    --destructive-foreground: oklch(0.2077 0.0398 265.7549);
+    --border: oklch(0.4461 0.0263 256.8018);
+    --input: oklch(0.4461 0.0263 256.8018);
+    --ring: oklch(0.6801 0.1583 276.9349);
+    --chart-1: oklch(0.6801 0.1583 276.9349);
+    --chart-2: oklch(0.5854 0.2041 277.1173);
+    --chart-3: oklch(0.5106 0.2301 276.9656);
+    --chart-4: oklch(0.4568 0.2146 277.0229);
+    --chart-5: oklch(0.3984 0.1773 277.3662);
+    --sidebar: oklch(0.2795 0.0368 260.031);
+    --sidebar-foreground: oklch(0.9288 0.0126 255.5078);
+    --sidebar-primary: oklch(0.6801 0.1583 276.9349);
+    --sidebar-primary-foreground: oklch(0.2077 0.0398 265.7549);
+    --sidebar-accent: oklch(0.3729 0.0306 259.7328);
+    --sidebar-accent-foreground: oklch(0.8717 0.0093 258.3382);
+    --sidebar-border: oklch(0.4461 0.0263 256.8018);
+    --sidebar-ring: oklch(0.6801 0.1583 276.9349);
+    --font-sans: Inter, sans-serif;
+    --font-serif: Merriweather, serif;
+    --font-mono: JetBrains Mono, monospace;
+    --radius: 0.5rem;
+    --shadow-x: 0px;
+    --shadow-y: 4px;
+    --shadow-blur: 8px;
+    --shadow-spread: -1px;
+    --shadow-opacity: 0.1;
+    --shadow-color: hsl(0 0% 0%);
+    --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-sm:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+    --shadow:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 1px 2px -2px hsl(0 0% 0% / 0.1);
+    --shadow-md:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 4px 6px -2px hsl(0 0% 0% / 0.1);
+    --shadow-xl:
+        0px 4px 8px -1px hsl(0 0% 0% / 0.1),
+        0px 8px 10px -2px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+}
+/* ===================== END TWEAKCN DARK ===================== */
+
+/* ===================== TWEAKCN: PASTE @theme inline MAPPING BELOW ===================== */
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    --font-sans: var(--font-sans);
+    --font-mono: var(--font-mono);
+    --font-serif: var(--font-serif);
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+
+    --shadow-2xs: var(--shadow-2xs);
+    --shadow-xs: var(--shadow-xs);
+    --shadow-sm: var(--shadow-sm);
+    --shadow: var(--shadow);
+    --shadow-md: var(--shadow-md);
+    --shadow-lg: var(--shadow-lg);
+    --shadow-xl: var(--shadow-xl);
+    --shadow-2xl: var(--shadow-2xl);
+}
+/* ===================== END TWEAKCN @theme inline ===================== */
+
+/* ===================== RADIX COLORS: ACCENT SWAP =====================
+   Iris scale (purple-violet) - overrides the TweakCN values for the
+   variables touched below. To switch to a different scale: change
+   the @import lines at the top of this file (blue/teal/amber/etc.)
+   and run a find-replace of `iris-` -> `{scale}-` in this block.
+
+   Step convention (Radix's recommendation):
+     step  9 = solid saturated brand color (primary)
+     step 10 = hover state
+     step 11 = readable text on the surface
+     step  3 = subtle backgrounds
+     step  6 = subtle borders
+     step  7 = focus rings
+*/
+:root {
+    --primary: var(--iris-9);
+    --primary-foreground: var(--iris-1);
+    --ring: var(--iris-7);
+    --accent: var(--iris-3);
+    --accent-foreground: var(--iris-11);
+    --chart-1: var(--iris-9);
+    --chart-2: var(--iris-7);
+    --chart-3: var(--iris-11);
+    --chart-4: var(--iris-5);
+    --chart-5: var(--iris-3);
+}
+.dark {
+    --primary: var(--iris-9);
+    --primary-foreground: var(--iris-1);
+    --ring: var(--iris-8);
+    --accent: var(--iris-4);
+    --accent-foreground: var(--iris-11);
+    --chart-1: var(--iris-9);
+    --chart-2: var(--iris-7);
+    --chart-3: var(--iris-11);
+    --chart-4: var(--iris-5);
+    --chart-5: var(--iris-12);
+}
+
+/* User-selectable palette overrides - each `.palette-{name}` class
+   re-binds the same token surface to its own Radix scale. Applied
+   to the <html> element by the use-palette hook based on the user's
+   Settings > Appearance choice. Iris stays the default (no class
+   needed). Dark mode is handled automatically because each Radix
+   scale's `-dark.css` file overrides its own variables under `.dark`. */
+.palette-tomato {
+    --primary: var(--tomato-9);
+    --primary-foreground: var(--tomato-1);
+    --ring: var(--tomato-7);
+    --accent: var(--tomato-3);
+    --accent-foreground: var(--tomato-11);
+    --chart-1: var(--tomato-9);
+    --chart-2: var(--tomato-7);
+    --chart-3: var(--tomato-11);
+    --chart-4: var(--tomato-5);
+    --chart-5: var(--tomato-3);
+}
+.palette-red {
+    --primary: var(--red-9);
+    --primary-foreground: var(--red-1);
+    --ring: var(--red-7);
+    --accent: var(--red-3);
+    --accent-foreground: var(--red-11);
+    --chart-1: var(--red-9);
+    --chart-2: var(--red-7);
+    --chart-3: var(--red-11);
+    --chart-4: var(--red-5);
+    --chart-5: var(--red-3);
+}
+.palette-crimson {
+    --primary: var(--crimson-9);
+    --primary-foreground: var(--crimson-1);
+    --ring: var(--crimson-7);
+    --accent: var(--crimson-3);
+    --accent-foreground: var(--crimson-11);
+    --chart-1: var(--crimson-9);
+    --chart-2: var(--crimson-7);
+    --chart-3: var(--crimson-11);
+    --chart-4: var(--crimson-5);
+    --chart-5: var(--crimson-3);
+}
+.palette-pink {
+    --primary: var(--pink-9);
+    --primary-foreground: var(--pink-1);
+    --ring: var(--pink-7);
+    --accent: var(--pink-3);
+    --accent-foreground: var(--pink-11);
+    --chart-1: var(--pink-9);
+    --chart-2: var(--pink-7);
+    --chart-3: var(--pink-11);
+    --chart-4: var(--pink-5);
+    --chart-5: var(--pink-3);
+}
+.palette-plum {
+    --primary: var(--plum-9);
+    --primary-foreground: var(--plum-1);
+    --ring: var(--plum-7);
+    --accent: var(--plum-3);
+    --accent-foreground: var(--plum-11);
+    --chart-1: var(--plum-9);
+    --chart-2: var(--plum-7);
+    --chart-3: var(--plum-11);
+    --chart-4: var(--plum-5);
+    --chart-5: var(--plum-3);
+}
+.palette-purple {
+    --primary: var(--purple-9);
+    --primary-foreground: var(--purple-1);
+    --ring: var(--purple-7);
+    --accent: var(--purple-3);
+    --accent-foreground: var(--purple-11);
+    --chart-1: var(--purple-9);
+    --chart-2: var(--purple-7);
+    --chart-3: var(--purple-11);
+    --chart-4: var(--purple-5);
+    --chart-5: var(--purple-3);
+}
+.palette-violet {
+    --primary: var(--violet-9);
+    --primary-foreground: var(--violet-1);
+    --ring: var(--violet-7);
+    --accent: var(--violet-3);
+    --accent-foreground: var(--violet-11);
+    --chart-1: var(--violet-9);
+    --chart-2: var(--violet-7);
+    --chart-3: var(--violet-11);
+    --chart-4: var(--violet-5);
+    --chart-5: var(--violet-3);
+}
+.palette-indigo {
+    --primary: var(--indigo-9);
+    --primary-foreground: var(--indigo-1);
+    --ring: var(--indigo-7);
+    --accent: var(--indigo-3);
+    --accent-foreground: var(--indigo-11);
+    --chart-1: var(--indigo-9);
+    --chart-2: var(--indigo-7);
+    --chart-3: var(--indigo-11);
+    --chart-4: var(--indigo-5);
+    --chart-5: var(--indigo-3);
+}
+.palette-blue {
+    --primary: var(--blue-9);
+    --primary-foreground: var(--blue-1);
+    --ring: var(--blue-7);
+    --accent: var(--blue-3);
+    --accent-foreground: var(--blue-11);
+    --chart-1: var(--blue-9);
+    --chart-2: var(--blue-7);
+    --chart-3: var(--blue-11);
+    --chart-4: var(--blue-5);
+    --chart-5: var(--blue-3);
+}
+.palette-sky {
+    --primary: var(--sky-9);
+    --primary-foreground: var(--sky-1);
+    --ring: var(--sky-7);
+    --accent: var(--sky-3);
+    --accent-foreground: var(--sky-11);
+    --chart-1: var(--sky-9);
+    --chart-2: var(--sky-7);
+    --chart-3: var(--sky-11);
+    --chart-4: var(--sky-5);
+    --chart-5: var(--sky-3);
+}
+.palette-cyan {
+    --primary: var(--cyan-9);
+    --primary-foreground: var(--cyan-1);
+    --ring: var(--cyan-7);
+    --accent: var(--cyan-3);
+    --accent-foreground: var(--cyan-11);
+    --chart-1: var(--cyan-9);
+    --chart-2: var(--cyan-7);
+    --chart-3: var(--cyan-11);
+    --chart-4: var(--cyan-5);
+    --chart-5: var(--cyan-3);
+}
+.palette-teal {
+    --primary: var(--teal-9);
+    --primary-foreground: var(--teal-1);
+    --ring: var(--teal-7);
+    --accent: var(--teal-3);
+    --accent-foreground: var(--teal-11);
+    --chart-1: var(--teal-9);
+    --chart-2: var(--teal-7);
+    --chart-3: var(--teal-11);
+    --chart-4: var(--teal-5);
+    --chart-5: var(--teal-3);
+}
+.palette-mint {
+    --primary: var(--mint-9);
+    --primary-foreground: var(--mint-1);
+    --ring: var(--mint-7);
+    --accent: var(--mint-3);
+    --accent-foreground: var(--mint-11);
+    --chart-1: var(--mint-9);
+    --chart-2: var(--mint-7);
+    --chart-3: var(--mint-11);
+    --chart-4: var(--mint-5);
+    --chart-5: var(--mint-3);
+}
+.palette-green {
+    --primary: var(--green-9);
+    --primary-foreground: var(--green-1);
+    --ring: var(--green-7);
+    --accent: var(--green-3);
+    --accent-foreground: var(--green-11);
+    --chart-1: var(--green-9);
+    --chart-2: var(--green-7);
+    --chart-3: var(--green-11);
+    --chart-4: var(--green-5);
+    --chart-5: var(--green-3);
+}
+.palette-grass {
+    --primary: var(--grass-9);
+    --primary-foreground: var(--grass-1);
+    --ring: var(--grass-7);
+    --accent: var(--grass-3);
+    --accent-foreground: var(--grass-11);
+    --chart-1: var(--grass-9);
+    --chart-2: var(--grass-7);
+    --chart-3: var(--grass-11);
+    --chart-4: var(--grass-5);
+    --chart-5: var(--grass-3);
+}
+.palette-lime {
+    --primary: var(--lime-9);
+    --primary-foreground: var(--lime-1);
+    --ring: var(--lime-7);
+    --accent: var(--lime-3);
+    --accent-foreground: var(--lime-11);
+    --chart-1: var(--lime-9);
+    --chart-2: var(--lime-7);
+    --chart-3: var(--lime-11);
+    --chart-4: var(--lime-5);
+    --chart-5: var(--lime-3);
+}
+.palette-yellow {
+    --primary: var(--yellow-9);
+    --primary-foreground: var(--yellow-1);
+    --ring: var(--yellow-7);
+    --accent: var(--yellow-3);
+    --accent-foreground: var(--yellow-11);
+    --chart-1: var(--yellow-9);
+    --chart-2: var(--yellow-7);
+    --chart-3: var(--yellow-11);
+    --chart-4: var(--yellow-5);
+    --chart-5: var(--yellow-3);
+}
+.palette-amber {
+    --primary: var(--amber-9);
+    --primary-foreground: var(--amber-1);
+    --ring: var(--amber-7);
+    --accent: var(--amber-3);
+    --accent-foreground: var(--amber-11);
+    --chart-1: var(--amber-9);
+    --chart-2: var(--amber-7);
+    --chart-3: var(--amber-11);
+    --chart-4: var(--amber-5);
+    --chart-5: var(--amber-3);
+}
+.palette-orange {
+    --primary: var(--orange-9);
+    --primary-foreground: var(--orange-1);
+    --ring: var(--orange-7);
+    --accent: var(--orange-3);
+    --accent-foreground: var(--orange-11);
+    --chart-1: var(--orange-9);
+    --chart-2: var(--orange-7);
+    --chart-3: var(--orange-11);
+    --chart-4: var(--orange-5);
+    --chart-5: var(--orange-3);
+}
+.palette-brown {
+    --primary: var(--brown-9);
+    --primary-foreground: var(--brown-1);
+    --ring: var(--brown-7);
+    --accent: var(--brown-3);
+    --accent-foreground: var(--brown-11);
+    --chart-1: var(--brown-9);
+    --chart-2: var(--brown-7);
+    --chart-3: var(--brown-11);
+    --chart-4: var(--brown-5);
+    --chart-5: var(--brown-3);
+}
+/* ===================== END RADIX ACCENT SWAP ===================== */
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}

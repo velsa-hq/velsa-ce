@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: velsa
+          POSTGRES_PASSWORD: velsa
+          POSTGRES_DB: velsa_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U velsa -d velsa_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      DB_CONNECTION: pgsql
+      DB_HOST: 127.0.0.1
+      DB_PORT: 5432
+      DB_DATABASE: velsa_test
+      DB_USERNAME: velsa
+      DB_PASSWORD: velsa
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          extensions: bcmath, exif, gd, intl, pcntl, pdo_pgsql, zip
+          coverage: pcov
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Install Node dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Prepare environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+          php artisan config:clear
+
+      - name: Build assets
+        run: npm run build
+
+      - name: Lint (eslint)
+        run: npm run lint:check
+
+      - name: Format (prettier)
+        run: npm run format:check
+
+      - name: Types (tsc)
+        run: npm run types:check
+
+      - name: Lint (pint)
+        run: composer lint:check
+
+      - name: Static analysis (phpstan)
+        run: composer analyze
+
+      - name: Tests + coverage
+        run: php artisan test --colors=never --coverage --min=70

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory>app</directory>
+        </include>
+        <exclude>
+            <!-- Scaffolds + framework wiring that don't have meaningful logic to cover. -->
+            <directory>app/Console</directory>
+            <directory>app/Providers</directory>
+            <file>app/Http/Middleware/HandleInertiaRequests.php</file>
+            <file>app/Http/Middleware/HandleAppearance.php</file>
+        </exclude>
+    </source>
+    <coverage>
+        <report>
+            <!-- Lightweight reports only by default. HTML is large and
+                 OOMs on the bigger codebase, so CI passes the
+                 coverage-html flag explicitly to generate the
+                 human-readable report as a build artifact. -->
+            <clover outputFile="coverage/clover.xml"/>
+            <text outputFile="coverage/coverage.txt" showOnlySummary="true"/>
+        </report>
+    </coverage>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="APP_DEBUG" value="true"/>
+        <env name="AUDIT_LOG_STREAM" value="php://temp"/>
+        <env name="APP_MAINTENANCE_DRIVER" value="file"/>
+        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="BROADCAST_CONNECTION" value="null"/>
+        <env name="CACHE_STORE" value="array"/>
+        <env name="DB_CONNECTION" value="pgsql"/>
+        <env name="DB_DATABASE" value="velsa_test"/>
+        <env name="DB_URL" value=""/>
+        <env name="MAIL_MAILER" value="array"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="PULSE_ENABLED" value="false"/>
+        <env name="TELESCOPE_ENABLED" value="false"/>
+        <env name="NIGHTWATCH_ENABLED" value="false"/>
+        <env name="SCOUT_DRIVER" value="collection"/>
+        <env name="DOCUSIGN_ENABLED" value="false"/>
+        <!-- pcov coverage over the whole app exceeds PHP's 128M default and
+             OOMs; raise it here so `artisan test`/`pest` (which read this file)
+             run with headroom without a per-command `-d memory_limit=` flag. -->
+        <ini name="memory_limit" value="2G"/>
+    </php>
+</phpunit>

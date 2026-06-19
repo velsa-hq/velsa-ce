@@ -1,0 +1,36 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - phpstan-baseline.neon
+
+parameters:
+    # Level 5 is a sensible bar for a mature Laravel codebase:
+    # - levels 0-3: basic correctness (undefined methods, wrong arg counts)
+    # - level 4: array/iterable type strictness
+    # - level 5: argument types match (catches a lot of real bugs)
+    # - level 6+: missing return types, missing parameter types
+    # - level 8+: null safety (often noisy in Laravel where helpers
+    #   genuinely return mixed)
+    #
+    # Codebase passes level 5 cleanly today — no baseline needed yet.
+    # When raising to 6+, generate one via:
+    #   vendor/bin/phpstan analyse --generate-baseline=phpstan-baseline.neon
+    # then include the baseline at the top of this file.
+    level: 5
+
+    paths:
+        - app
+        - config
+        - database
+        - routes
+
+    excludePaths:
+        # Generated / scaffold files.
+        - bootstrap/cache/*
+
+    # Treat unmatched ignored errors as a failure so the baseline
+    # stays meaningful as code churns.
+    reportUnmatchedIgnoredErrors: true
+
+    # Laravel-specific niceties enabled by Larastan: properly type
+    # Eloquent relations, builders, factories, and request helpers.
+    # No need to set these; the extension.neon include handles them.

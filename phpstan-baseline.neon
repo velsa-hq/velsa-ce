@@ -1,0 +1,3865 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Method App\\Actions\\Fortify\\CreateNewUser\:\:passwordRules\(\) should return array\<int, array\<mixed\>\|Illuminate\\Contracts\\Validation\\ValidationRule\|string\> but returns array\<int, Illuminate\\Validation\\Rules\\Password\|string\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Actions/Fortify/CreateNewUser.php
+
+		-
+			message: '#^Method App\\Actions\\Fortify\\ResetUserPassword\:\:passwordRules\(\) should return array\<int, array\<mixed\>\|Illuminate\\Contracts\\Validation\\ValidationRule\|string\> but returns array\<int, Illuminate\\Validation\\Rules\\Password\|string\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Actions/Fortify/ResetUserPassword.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/IssueDueInstallments.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Dashboard/Tiles/MyOpenLeadsTile.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: app/Dashboard/Tiles/MyOpenLeadsTile.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Dashboard/Tiles/MyOpenLeadsTile.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Lead\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Dashboard/Tiles/MyOpenLeadsTile.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Dashboard/Tiles/MyOpenLeadsTile.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Dashboard/Tiles/MyUpcomingBookingsTile.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Dashboard/Tiles/MyUpcomingBookingsTile.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Dashboard/Tiles/MyUpcomingBookingsTile.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Dashboard/Tiles/PastDueInvoicesTile.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Invoice\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Dashboard/Tiles/PastDueInvoicesTile.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Dashboard/Tiles/PastDueInvoicesTile.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\LeadStage\:\:ContractSent\|App\\Enums\\LeadStage\:\:Lost\|App\\Enums\\LeadStage\:\:New\|App\\Enums\\LeadStage\:\:ProposalSent\|App\\Enums\\LeadStage\:\:Qualified\|App\\Enums\\LeadStage\:\:Won will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Dashboard/Tiles/PipelineByStageTile.php
+
+		-
+			message: '#^Call to function is_array\(\) with string\|null will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Dashboard/Tiles/QuickLinksTile.php
+
+		-
+			message: '#^Offset ''quick_link_keys'' on \*NEVER\* in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.offset
+			count: 1
+			path: app/Dashboard/Tiles/QuickLinksTile.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 2
+			path: app/Dashboard/Tiles/QuickLinksTile.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Dashboard/Tiles/RecentActivityTile.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Dashboard/Tiles/RecentActivityTile.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\AuditEvent\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Dashboard/Tiles/RecentActivityTile.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Dashboard/Tiles/RecentActivityTile.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Dashboard/Tiles/TodayOutlineTile.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/AccountingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$period\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/AccountingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/AccountingController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\JournalEntry\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/AccountingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/AuditController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/AuditController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/AuditController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/AuditController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Http/Controllers/Admin/AuditController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\AuditEvent\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/AuditController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/Admin/AuditController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Http/Controllers/Admin/ChartOfAccountController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/DocumentTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/DocumentTemplateController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Admin/DocumentTemplateController.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Admin/DocumentTemplateController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/Admin/DocumentTemplateController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/Admin/DocumentTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$align\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$default_value\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$format_mask\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$label\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$pad_char\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$source\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$width\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\ExportTemplate\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/Admin/ExportTemplateController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 4
+			path: app/Http/Controllers/Admin/FiscalYearController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Http/Controllers/Admin/FiscalYearController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\FiscalYear\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/FiscalYearController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 4
+			path: app/Http/Controllers/Admin/FiscalYearController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Admin/FundController.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Admin/FundController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Http/Controllers/Admin/FundController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/Admin/FundController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/Admin/FundController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$company_name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$contact_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$detail\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$line_total_cents\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$quantity\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reference\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$unit_price_cents\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:contacts\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 5
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 6
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Invoice\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 2
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\Invoice\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 6
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>company_name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 5
+			path: app/Http/Controllers/Admin/InvoiceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/ReportBuilderController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Http/Controllers/Admin/ReportBuilderController.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Http/Controllers/Admin/ReportBuilderController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\ReportDefinition\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/ReportBuilderController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/Admin/ReportBuilderController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/Admin/ReportBuilderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/SsoMappingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/SsoMappingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/SsoMappingController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\EntraGroupRoleMapping\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/SsoMappingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$color\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/TaxonomyController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/TaxonomyController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$is_active\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/Admin/TaxonomyController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$is_system\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Admin/TaxonomyController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$key\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/TaxonomyController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$label\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/Admin/TaxonomyController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$sort_order\.$#'
+			identifier: property.notFound
+			count: 5
+			path: app/Http/Controllers/Admin/TaxonomyController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\<Illuminate\\Database\\Eloquent\\Model\>\:\:ordered\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/TaxonomyController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: app/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\User\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/UserController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Admin/WorkOrderTemplateController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Admin/WorkOrderTemplateController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Admin/WorkOrderTemplateController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\WorkOrderTemplate\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Admin/WorkOrderTemplateController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/Admin/WorkOrderTemplateController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\EventKind\:\:\$key\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\EventKind\:\:\$label\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$capacity\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$due_on\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 9
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$installments\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$issued_on\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$kind\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 8
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$notes\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$paid_cents\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$parent_space_id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$total_cents\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:balanceCents\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 5
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\EventKind\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 5
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, kind\: mixed, kind_label\: mixed, body\: string, happened_at\: mixed, created_at\: string\|null, author\: array\{id\: mixed, name\: mixed\}\|null\}, Closure\(App\\Models\\BookingNarrative\)\: array\{id\: int, kind\: mixed, kind_label\: mixed, body\: string, happened_at\: mixed, created_at\: string\|null, author\: array\{id\: mixed, name\: mixed\}\|null\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, role\: string, start_at\: mixed, end_at\: mixed, hourly_rate_cents\: int\<0, max\>, duration_hours\: float, labor_cost_cents\: int, notes\: string\|null, user\: array\{id\: mixed, name\: mixed, email\: mixed\}\|null\}, Closure\(App\\Models\\StaffAssignment\)\: array\{id\: int, role\: string, start_at\: mixed, end_at\: mixed, hourly_rate_cents\: int\<0, max\>, duration_hours\: float, labor_cost_cents\: int, notes\: string\|null, user\: array\{id\: mixed, name\: mixed, email\: mixed\}\|null\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Support\\Carbon\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 4
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/BookingController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$closed_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 5
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$estimated_value_cents\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$expected_close_date\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 5
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$is_primary\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 8
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$phone\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$probability\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reference\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$role\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$stage\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$venue\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 4
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Contract\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 3
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\Client\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 2
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 4
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$client\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$created_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$declined_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$end_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 6
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$kind\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 6
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reference\.$#'
+			identifier: property.notFound
+			count: 5
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$role\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$signed_at\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$signing_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$start_at\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$venue\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$viewed_at\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 9
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 3
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\Contract\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 2
+			path: app/Http/Controllers/ContractController.php
+
+		-
+			message: '#^Call to function is_array\(\) with string\|null will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 3
+			path: app/Http/Controllers/DashboardController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/DashboardController.php
+
+		-
+			message: '#^Offset ''tiles'' on \*NEVER\* in isset\(\) always exists and is not nullable\.$#'
+			identifier: isset.offset
+			count: 1
+			path: app/Http/Controllers/DashboardController.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 2
+			path: app/Http/Controllers/DashboardController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$objects_json\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/DiagramController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$version\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/DiagramController.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>objects_json" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/DiagramController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$code\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$department\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$end_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$order_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$paid_cents\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$payments\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$portal_slug\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reference\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$start_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$status\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$total_cents\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 4
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\ExhibitorController\:\:bookingOptions\(\) should return Illuminate\\Support\\Collection\<int, array\<string, mixed\>\> but returns Illuminate\\Support\\Collection\<int, array\{id\: int, reference\: string, name\: string, kind\: string\|null, start_at\: string\|null\}\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\EquipmentItem\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\WorkOrder\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\<string, mixed\>, Closure\(App\\Models\\ExhibitorOrder\)\: array\<string, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, company_name\: string, contact_name\: string, email\: string, booth_assignment\: string\|null, booth_size\: string\|null, order_count\: int\<0, max\>, total_cents\: mixed, paid_cents\: mixed, balance_cents\: float\|int\<0, max\>\}, Closure\(App\\Models\\Exhibitor\)\: array\{id\: int, company_name\: string, contact_name\: string, email\: string, booth_assignment\: string\|null, booth_size\: string\|null, order_count\: int\<0, max\>, total_cents\: mixed, paid_cents\: mixed, balance_cents\: float\|int\<0, max\>\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, provider\: string, status\: mixed, amount_cents\: int\<0, max\>, refunded_amount_cents\: int\<0, max\>, refundable_cents\: int, card_brand\: string\|null, last4\: string\|null, processed_at\: mixed, refunded_at\: mixed\}, Closure\(App\\Models\\ExhibitorPayment\)\: array\{id\: int, provider\: string, status\: mixed, amount_cents\: int\<0, max\>, refunded_amount_cents\: int\<0, max\>, refundable_cents\: int, card_brand\: string\|null, last4\: string\|null, processed_at\: mixed, refunded_at\: mixed\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, sku\: string\|null, name\: string, department\: string\|null, gl_account\: string\|null, quantity\: int\<0, max\>, unit_price_cents\: int\<0, max\>, line_total_cents\: int\<0, max\>, equipment_item_id\: int\<0, max\>\|null\}, Closure\(App\\Models\\ExhibitorOrderItem\)\: array\{id\: int, sku\: string\|null, name\: string, department\: string\|null, gl_account\: string\|null, quantity\: int\<0, max\>, unit_price_cents\: int\<0, max\>, line_total_cents\: int\<0, max\>, equipment_item_id\: int\<0, max\>\|null\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\Exhibitor\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:reduce\(\) expects callable\(non\-empty\-array, Illuminate\\Database\\Eloquent\\Model, int\)\: non\-empty\-array, Closure\(array, App\\Models\\ExhibitorOrder\)\: non\-empty\-array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\PaymentStatus\:\:Captured will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type App\\Enums\\ExhibitorOrderStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\ExhibitorOrderStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/ExhibitorController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\InventoryKind\:\:\$key\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\InventoryKind\:\:\$label\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reference\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$sku\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\InventoryKind\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\WorkOrderItem\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, venue_id\: int\<0, max\>, venue_name\: mixed, kind\: string, kind_label\: mixed, sku\: string\|null, name\: string, quantity_total\: int\<0, max\>, quantity_available\: int\<0, max\>, reorder_point\: int\<0, max\>, is_consumable\: bool, is_low\: bool\}, Closure\(App\\Models\\ResourceInventory\)\: array\{id\: int, venue_id\: int\<0, max\>, venue_name\: mixed, kind\: string, kind_label\: mixed, sku\: string\|null, name\: string, quantity_total\: int\<0, max\>, quantity_available\: int\<0, max\>, reorder_point\: int\<0, max\>, is_consumable\: bool, is_low\: bool\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/InventoryController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/LayoutTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/LayoutTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$objects_json\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/LayoutTemplateController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\LayoutTemplate\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/LayoutTemplateController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,string\>\:\:map\(\) expects callable\(string, 0\)\: non\-empty\-array, Closure\(array\)\: non\-empty\-array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/LayoutTemplateController.php
+
+		-
+			message: '#^Parameter \#1 \$value of function collect expects Illuminate\\Contracts\\Support\\Arrayable\<\(int\|string\), mixed\>\|iterable\<\(int\|string\), mixed\>\|null, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/LayoutTemplateController.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>objects_json" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/LayoutTemplateController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 5
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reference\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 4
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, kind\: mixed, summary\: string\|null, note\: string\|null, due_at\: mixed, completed_at\: mixed, is_overdue\: bool, user\: array\{id\: mixed, name\: mixed, email\: mixed\}\|null\}, Closure\(App\\Models\\Activity\)\: array\{id\: int, kind\: mixed, summary\: string\|null, note\: string\|null, due_at\: mixed, completed_at\: mixed, is_overdue\: bool, user\: array\{id\: mixed, name\: mixed, email\: mixed\}\|null\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: app/Http/Controllers/LeadController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\OutlineItem\:\:\$task_done\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/OpsBoardController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\OutlineItem\:\:\$task_total\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/OpsBoardController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/OpsBoardController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/OpsBoardController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/OpsBoardController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, label\: string, is_done\: bool\}, Closure\(App\\Models\\OutlineItemTask\)\: array\{id\: int, label\: string, is_done\: bool\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/OpsBoardController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 6
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$outline\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Parameter \#1 \$array \(array\{\}\|string\) to function array_values is empty, call has no effect\.$#'
+			identifier: arrayValues.empty
+			count: 1
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\OutlineItemTemplate\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 3
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{day_label\: string, time\: string, end_time\: string\|null, duration_minutes\: int\<0, max\>, department\: string, title\: string, description_html\: string, space\: mixed, responsible\: mixed, tasks\: array\<int, array\{label\: string, is_done\: bool\}\>\}, Closure\(App\\Models\\OutlineItem\)\: array\{day_label\: string, time\: string, end_time\: string\|null, duration_minutes\: int\<0, max\>, department\: string, title\: string, description_html\: string, space\: mixed, responsible\: mixed, tasks\: array\<int, array\{label\: string, is_done\: bool\}\>\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, label\: string, is_done\: bool\}, Closure\(App\\Models\\OutlineItemTask\)\: array\{id\: int, label\: string, is_done\: bool\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, scheduled_at\: string\|null, scheduled_at_edit\: string\|null, ends_at\: string, duration_minutes\: int\<0, max\>, department\: string, department_label\: string, department_color\: string, title\: string, description\: string\|null, description_html\: string, space_name\: mixed, responsible_user_id\: int\<0, max\>\|null, responsible_name\: mixed, responsible_email\: mixed, tasks\: array\<int, array\{id\: int, label\: string, is_done\: bool\}\>\}, Closure\(App\\Models\\OutlineItem\)\: array\{id\: int, scheduled_at\: string\|null, scheduled_at_edit\: string\|null, ends_at\: string, duration_minutes\: int\<0, max\>, department\: string, department_label\: string, department_color\: string, title\: string, description\: string\|null, description_html\: string, space_name\: mixed, responsible_user_id\: int\<0, max\>\|null, responsible_name\: mixed, responsible_email\: mixed, tasks\: array\<int, array\{id\: int, label\: string, is_done\: bool\}\>\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{label\: string, is_done\: bool\}, Closure\(App\\Models\\OutlineItemTask\)\: array\{label\: string, is_done\: bool\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{user_id\: int\<0, max\>, name\: mixed, email\: mixed, role\: string, start_at\: mixed, end_at\: mixed\}, Closure\(App\\Models\\StaffAssignment\)\: array\{user_id\: int\<0, max\>, name\: mixed, email\: mixed, role\: string, start_at\: mixed, end_at\: mixed\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Parameter \#1 \$key of method Illuminate\\Support\\Collection\<int,array\<string, mixed\>\>\:\:unique\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/OutlineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reference\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Lead\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\LeadStage\:\:Won will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/PipelineController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Portal/DashboardController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Portal/DashboardController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$registration_closes_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Portal/DashboardController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:isRegistrationOpen\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/Portal/DashboardController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, order_number\: string, status\: ''cancelled''\|''cart''\|''paid''\|''partially_paid''\|''pending''\|''refunded'', total_cents\: int\<0, max\>, paid_cents\: int\<0, max\>, balance_cents\: int\<0, max\>, item_count\: int\<0, max\>, placed_at\: string\|null\}, Closure\(App\\Models\\ExhibitorOrder\)\: array\{id\: int, order_number\: string, status\: ''cancelled''\|''cart''\|''paid''\|''partially_paid''\|''pending''\|''refunded'', total_cents\: int\<0, max\>, paid_cents\: int\<0, max\>, balance_cents\: int\<0, max\>, item_count\: int\<0, max\>, placed_at\: string\|null\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Portal/DashboardController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:reduce\(\) expects callable\(non\-empty\-array, Illuminate\\Database\\Eloquent\\Model, int\)\: non\-empty\-array, Closure\(array, App\\Models\\ExhibitorOrder\)\: non\-empty\-array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Portal/DashboardController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\ExhibitorOrderStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/Portal/DashboardController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$amount_cents\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$card_brand\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$last4\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$processed_at\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$total_cents\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:recalculateTotals\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 2
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, sku\: string\|null, name\: string, quantity\: int\<0, max\>, unit_price_cents\: int\<0, max\>, line_total_cents\: int\<0, max\>\}, Closure\(App\\Models\\ExhibitorOrderItem\)\: array\{id\: int, sku\: string\|null, name\: string, quantity\: int\<0, max\>, unit_price_cents\: int\<0, max\>, line_total_cents\: int\<0, max\>\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{sku\: string\|null, name\: string, quantity\: int\<0, max\>, unit_price_cents\: int\<0, max\>, line_total_cents\: int\<0, max\>\}, Closure\(App\\Models\\ExhibitorOrderItem\)\: array\{sku\: string\|null, name\: string, quantity\: int\<0, max\>, unit_price_cents\: int\<0, max\>, line_total_cents\: int\<0, max\>\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Parameter \#1 \$order of method App\\Http\\Controllers\\Portal\\OrderController\:\:isEditable\(\) expects App\\Models\\ExhibitorOrder, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Parameter \#1 \$order of method App\\Services\\Accounting\\InvoiceService\:\:issueForOrder\(\) expects App\\Models\\ExhibitorOrder, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Parameter \#1 \$order of static method App\\Models\\ExhibitorOrderItem\:\:fromCatalog\(\) expects App\\Models\\ExhibitorOrder, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\ExhibitorOrderStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: app/Http/Controllers/Portal/OrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$client\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$company_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 6
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Offset ''city'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Offset ''state'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Parameter \#1 \$array \(array\{null, null\}\) to function array_filter contains falsy values only, the result will always be an empty array\.$#'
+			identifier: arrayFilter.alwaysEmpty
+			count: 1
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Invoice\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/SearchController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 2
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Blackout\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\BookingSpace\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, name\: string, capacity\: int\<0, max\>\|null\}, Closure\(App\\Models\\Space\)\: array\{id\: int, name\: string, capacity\: int\<0, max\>\|null\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, name\: string\}, Closure\(App\\Models\\Space\)\: array\{id\: int, name\: string\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Parameter \#1 \$model of static method App\\Support\\DisplayImage\:\:apply\(\) expects Illuminate\\Database\\Eloquent\\Model&Spatie\\MediaLibrary\\HasMedia, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Support\\Carbon\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/SpaceController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$bookable_unit\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$capacity\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$kind\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$sqft\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:kindLabel\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:thumbUrl\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 3
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Offset ''building'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Offset ''city'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 4
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Offset ''state'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 4
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Offset ''street'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Offset ''zip'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Blackout\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\WorkOrder\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\WorkOrderTemplate\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: app/Http/Controllers/VenueController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booth_assignment\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$company_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 4
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 10
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$order_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reference\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 9
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{id\: int, resource_inventory_id\: int\<0, max\>\|null, name\: string, sku\: string\|null, quantity\: int\<0, max\>, unit\: string\|null, unit_cost_cents\: int\<0, max\>\|null, action\: mixed, notes\: string\|null, applied_at\: string\|null\}, Closure\(App\\Models\\WorkOrderItem\)\: array\{id\: int, resource_inventory_id\: int\<0, max\>\|null, name\: string, sku\: string\|null, quantity\: int\<0, max\>, unit\: string\|null, unit_cost_cents\: int\<0, max\>\|null, action\: mixed, notes\: string\|null, applied_at\: string\|null\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) expects callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: array\{name\: string, sku\: string\|null, quantity\: int\<0, max\>, unit\: string\|null, action\: string, line\: non\-falsy\-string\|null\}, Closure\(App\\Models\\WorkOrderItem\)\: array\{name\: string, sku\: string\|null, quantity\: int\<0, max\>, unit\: string\|null, action\: string, line\: non\-falsy\-string\|null\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\WorkOrder\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:sum\(\) expects \(callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: int\<0, max\>\)\|string\|null, Closure\(App\\Models\\WorkOrderItem\)\: int\<0, max\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Parameter \#2 \$workOrder of method App\\Http\\Controllers\\WorkOrderController\:\:validateItem\(\) expects App\\Models\\WorkOrder, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Property App\\Models\\WorkOrder\:\:\$status \(string\) does not accept App\\Enums\\WorkOrderStatus\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between int\<0, max\> and null will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\WorkOrderStatus\:\:Completed will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\WorkOrderStatus\:\:Completed will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 8
+			path: app/Http/Controllers/WorkOrderController.php
+
+		-
+			message: '#^Parameter \#1 \$array \(list\<non\-falsy\-string\>\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 1
+			path: app/Http/Middleware/HandleInertiaRequests.php
+
+		-
+			message: '#^Cannot call method diffInMinutes\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Middleware/IdleTimeoutMiddleware.php
+
+		-
+			message: '#^Cannot call method isPast\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Middleware/IdleTimeoutMiddleware.php
+
+		-
+			message: '#^Cannot call method diffInSeconds\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Middleware/UpdateLastActiveMiddleware.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Settings\\PasswordUpdateRequest\:\:passwordRules\(\) should return array\<int, array\<mixed\>\|Illuminate\\Contracts\\Validation\\ValidationRule\|string\> but returns array\<int, Illuminate\\Validation\\Rules\\Password\|string\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Requests/Settings/PasswordUpdateRequest.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Settings\\ProfileDeleteRequest\:\:passwordRules\(\) should return array\<int, array\<mixed\>\|Illuminate\\Contracts\\Validation\\ValidationRule\|string\> but returns array\<int, Illuminate\\Validation\\Rules\\Password\|string\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Http/Requests/Settings/ProfileDeleteRequest.php
+
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: app/Listeners/AuthAuditSubscriber.php
+
+		-
+			message: '#^Parameter \$user of method App\\Services\\AuditLogger\:\:record\(\) expects App\\Models\\User\|null, Illuminate\\Contracts\\Auth\\Authenticatable given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Listeners/AuthAuditSubscriber.php
+
+		-
+			message: '#^Parameter \$user of method App\\Services\\AuditLogger\:\:record\(\) expects App\\Models\\User\|null, Illuminate\\Contracts\\Auth\\MustVerifyEmail given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Listeners/AuthAuditSubscriber.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$exhibitor\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Listeners/PostPaymentJournalEntries.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Listeners/PostPaymentJournalEntries.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$order_number\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Listeners/PostPaymentJournalEntries.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>order_number" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Listeners/PostPaymentJournalEntries.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Listeners/SendPaymentReceipt.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$contact_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Mail/DunningNotice.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Mail/DunningNotice.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:contacts\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Mail/DunningNotice.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Mail/ExhibitorPortalLink.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Mail/ExhibitorPortalLink.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$contact_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Mail/InvoiceRefunded.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Mail/InvoiceRefunded.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:contacts\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Mail/InvoiceRefunded.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Mail/IssuedInvoice.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$contact_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Mail/IssuedInvoice.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Mail/IssuedInvoice.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:contacts\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Mail/IssuedInvoice.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$contact_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Mail/PaymentReceipt.php
+
+		-
+			message: '#^Cannot call method isPast\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/Activity.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Models/Booking.php
+
+		-
+			message: '#^Instanceof between App\\Enums\\BookingStatus and App\\Enums\\BookingStatus will always evaluate to true\.$#'
+			identifier: instanceof.alwaysTrue
+			count: 1
+			path: app/Models/Booking.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/Booking.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Models/BookingSpace.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between App\\Models\\Space and null will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Models/BookingSpace.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Support\\Carbon\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Models/BookingSpace.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Models/BookingSpace.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>reference" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/BookingSpace.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>value" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: app/Models/BookingSpace.php
+
+		-
+			message: '#^Cannot call method isAfter\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/ChartOfAccount.php
+
+		-
+			message: '#^Cannot call method isBefore\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/ChartOfAccount.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Models/Client.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/Client.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$client\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Contract.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Contract.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$reference\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Contract.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Diagram.php
+
+		-
+			message: '#^Method App\\Models\\Diagram\:\:saveVersion\(\) should return App\\Models\\DiagramVersion but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Models/Diagram.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$credit_account_code\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/EquipmentItem.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$debit_account_code\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/EquipmentItem.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/EquipmentItem.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$tax_rate\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/EquipmentItem.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>tax_rate" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/EquipmentItem.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Exhibitor.php
+
+		-
+			message: '#^Method App\\Models\\Exhibitor\:\:currentDraftOrder\(\) should return App\\Models\\ExhibitorOrder\|null but returns Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Models/Exhibitor.php
+
+		-
+			message: '#^Cannot call method gte\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/ExhibitorEvent.php
+
+		-
+			message: '#^Cannot call method lte\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/ExhibitorEvent.php
+
+		-
+			message: '#^Property App\\Models\\ExhibitorOrder\:\:\$status \(App\\Enums\\ExhibitorOrderStatus\) does not accept string\.$#'
+			identifier: assign.propertyType
+			count: 4
+			path: app/Models/ExhibitorOrder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$department\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/ExhibitorOrderItem.php
+
+		-
+			message: '#^Method App\\Models\\ExhibitorOrderItem\:\:fromCatalog\(\) should return App\\Models\\ExhibitorOrderItem but returns Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Models/ExhibitorOrderItem.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\PaymentStatus\:\:Captured will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Models/ExhibitorPayment.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Models/ExhibitorPayment.php
+
+		-
+			message: '#^Cannot call method isAfter\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/Fund.php
+
+		-
+			message: '#^Cannot call method isBefore\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/Fund.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$company_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Invoice.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Invoice.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\:\:open\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/Invoice.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Models/Invoice.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/Invoice.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/Invoice.php
+
+		-
+			message: '#^Cannot call method diffInMinutes\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/LaborLog.php
+
+		-
+			message: '#^Instanceof between string and App\\Enums\\LeadStage will always evaluate to false\.$#'
+			identifier: instanceof.alwaysFalse
+			count: 1
+			path: app/Models/Lead.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$color\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/OutlineItem.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$label\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/OutlineItem.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>color" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/OutlineItem.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>label" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/OutlineItem.php
+
+		-
+			message: '#^Method App\\Models\\ReportDefinition\:\:lastRun\(\) should return App\\Models\\ReportRun\|null but returns Illuminate\\Database\\Eloquent\\Model\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Models/ReportDefinition.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$label\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/Space.php
+
+		-
+			message: '#^Call to an undefined method Spatie\\Image\\Drivers\\ImageDriver\:\:nonQueued\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/Space.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>label" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/Space.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/Space.php
+
+		-
+			message: '#^Cannot call method diffInMinutes\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/StaffAssignment.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model&object\{pivot\: Illuminate\\Database\\Eloquent\\Relations\\Pivot\}\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Call to an undefined method Spatie\\Image\\Drivers\\ImageDriver\:\:nonQueued\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/Venue.php
+
+		-
+			message: '#^Cannot call method isPast\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/Venue.php
+
+		-
+			message: '#^Offset ''city'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Models/Venue.php
+
+		-
+			message: '#^Offset ''state'' on string\|null on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Models/Venue.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Builder\:\:open\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/WorkOrder.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:applyToInventory\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/WorkOrder.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:reverseFromInventory\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Models/WorkOrder.php
+
+		-
+			message: '#^Cannot call method isOpen\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Models/WorkOrder.php
+
+		-
+			message: '#^Instanceof between string and App\\Enums\\WorkOrderStatus will always evaluate to false\.$#'
+			identifier: instanceof.alwaysFalse
+			count: 1
+			path: app/Models/WorkOrder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Models/WorkOrder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$quantity_available\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Models/WorkOrderItem.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$quantity_total\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Models/WorkOrderItem.php
+
+		-
+			message: '#^Cannot call method deltaAvailable\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Models/WorkOrderItem.php
+
+		-
+			message: '#^Cannot call method deltaTotal\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Models/WorkOrderItem.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between ''cancelled''\|''completed''\|''definite''\|''hold''\|''inquiry''\|''tentative'' and null will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Observers/BookingObserver.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Observers/BookingObserver.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 1
+			path: app/Observers/InvoiceObserver.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\InvoiceStatus\:\:Void will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Observers/InvoiceObserver.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>label" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/AdHocReportRunner.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>sqlExpression" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/AdHocReportRunner.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$company_name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Reports/Handlers/ArAgingReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Reports/Handlers/ArAgingReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\ExhibitorOrder\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/ArAgingReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,array\<string, mixed\>\>\:\:sortByDesc\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/ArAgingReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>company_name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/ArAgingReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>email" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/ArAgingReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Reports/Handlers/BookedLocationsReport.php
+
+		-
+			message: '#^Expression on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.expr
+			count: 1
+			path: app/Reports/Handlers/BookedLocationsReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/BookedLocationsReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Reports/Handlers/BookedLocationsReport.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/BookedLocationsReport.php
+
+		-
+			message: '#^Cannot call method toFormattedDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Reports/Handlers/BudgetVsActualReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Reports/Handlers/CalendarOfEventsReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/CalendarOfEventsReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Reports/Handlers/CalendarOfEventsReport.php
+
+		-
+			message: '#^Cannot call method label\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Reports/Handlers/ClerkMonthlyArReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Invoice\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/ClerkMonthlyArReport.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/ClerkMonthlyArReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Reports/Handlers/EventAttendanceReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/EventAttendanceReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Reports/Handlers/EventAttendanceReport.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/EventAttendanceReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$contacts\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Reports/Handlers/EventBulletinReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Reports/Handlers/EventBulletinReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/EventBulletinReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: app/Reports/Handlers/EventBulletinReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>phone" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/EventBulletinReport.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/EventBulletinReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Reports/Handlers/EventScheduleReport.php
+
+		-
+			message: '#^Expression on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.expr
+			count: 1
+			path: app/Reports/Handlers/EventScheduleReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/EventScheduleReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Reports/Handlers/EventScheduleReport.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/EventScheduleReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Reports/Handlers/EventServicesScheduleReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Reports/Handlers/EventServicesScheduleReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\OutlineItem\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/EventServicesScheduleReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 4
+			path: app/Reports/Handlers/EventServicesScheduleReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>reference" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/EventServicesScheduleReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Call to function is_array\(\) with null will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Cannot call method format\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Offset ''after'' on array\{\}\|string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Offset ''before'' on array\{\}\|string on left side of \?\? does not exist\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\AuditEvent\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 1
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>reference" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/EventStatusChangeReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booking\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Reports/Handlers/FoodAndBeverageRequirementsReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Reports/Handlers/FoodAndBeverageRequirementsReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\OutlineItem\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/FoodAndBeverageRequirementsReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>attendance_estimate" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Reports/Handlers/FoodAndBeverageRequirementsReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: app/Reports/Handlers/FoodAndBeverageRequirementsReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>reference" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/FoodAndBeverageRequirementsReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Reports/Handlers/InventoryUtilizationReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\ResourceInventory\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/InventoryUtilizationReport.php
+
+		-
+			message: '#^Parameter \#1 \$value of function collect contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 3
+			path: app/Reports/Handlers/InventoryUtilizationReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/InventoryUtilizationReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Reports/Handlers/LocationAvailabilityReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Cannot call method isOpen\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Lead\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\LeadStage\:\:ContractSent\|App\\Enums\\LeadStage\:\:Lost\|App\\Enums\\LeadStage\:\:New\|App\\Enums\\LeadStage\:\:ProposalSent\|App\\Enums\\LeadStage\:\:Qualified\|App\\Enums\\LeadStage\:\:Won will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>email" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/SalesPipelineReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Reports/Handlers/WorkOrderStatusReport.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Reports/Handlers/WorkOrderStatusReport.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: app/Reports/Handlers/WorkOrderStatusReport.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\WorkOrder\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Reports/Handlers/WorkOrderStatusReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>email" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/WorkOrderStatusReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/WorkOrderStatusReport.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>value" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Reports/Handlers/WorkOrderStatusReport.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Reports/Handlers/WorkOrderStatusReport.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Services/Accounting/BudgetService.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>amount_cents" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Services/Accounting/BudgetService.php
+
+		-
+			message: '#^Offset ''line_number'' on array\{line_number\: int\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Accounting/ExportSource.php
+
+		-
+			message: '#^Instanceof between Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\> and Illuminate\\Support\\Collection will always evaluate to true\.$#'
+			identifier: instanceof.alwaysTrue
+			count: 1
+			path: app/Services/Accounting/ExportTemplateRenderer.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Enums\\ExportFormat\:\:Csv is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 2
+			path: app/Services/Accounting/ExportTemplateRenderer.php
+
+		-
+			message: '#^Match arm comparison between string and App\\Enums\\ExportFormat\:\:FixedWidth is always false\.$#'
+			identifier: match.alwaysFalse
+			count: 2
+			path: app/Services/Accounting/ExportTemplateRenderer.php
+
+		-
+			message: '#^Match expression does not handle remaining value\: string$#'
+			identifier: match.unhandled
+			count: 2
+			path: app/Services/Accounting/ExportTemplateRenderer.php
+
+		-
+			message: '#^Parameter \#2 \$columns of method App\\Services\\Accounting\\ExportTemplateRenderer\:\:renderFooter\(\) expects Illuminate\\Support\\Collection\<int, App\\Models\\ExportTemplateColumn\>, Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Accounting/ExportTemplateRenderer.php
+
+		-
+			message: '#^Parameter \#2 \$columns of method App\\Services\\Accounting\\ExportTemplateRenderer\:\:renderHeader\(\) expects Illuminate\\Support\\Collection\<int, App\\Models\\ExportTemplateColumn\>, Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Accounting/ExportTemplateRenderer.php
+
+		-
+			message: '#^Parameter \#2 \$columns of method App\\Services\\Accounting\\ExportTemplateRenderer\:\:renderRow\(\) expects Illuminate\\Support\\Collection\<int, App\\Models\\ExportTemplateColumn\>, Illuminate\\Database\\Eloquent\\Collection\<int, Illuminate\\Database\\Eloquent\\Model\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Accounting/ExportTemplateRenderer.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$quantity\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$unit_price_cents\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:contacts\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Call to function in_array\(\) with arguments string, array\{App\\Enums\\InvoiceStatus\:\:Draft, App\\Enums\\InvoiceStatus\:\:Void, App\\Enums\\InvoiceStatus\:\:WrittenOff\} and true will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Cannot call method isOpen\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^If condition is always true\.$#'
+			identifier: if.alwaysTrue
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Result of && is always false\.$#'
+			identifier: booleanAnd.alwaysFalse
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Result of \|\| is always true\.$#'
+			identifier: booleanOr.alwaysTrue
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\InvoiceStatus\:\:Issued\|App\\Enums\\InvoiceStatus\:\:Paid\|App\\Enums\\InvoiceStatus\:\:PartialPaid\|App\\Enums\\InvoiceStatus\:\:PastDue will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between App\\Enums\\DunningStage and string will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\InvoiceStatus\:\:Draft will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\InvoiceStatus\:\:Issued will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\InvoiceStatus\:\:Paid will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 2
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\InvoiceStatus\:\:Void will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 2
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between string and App\\Enums\\InvoiceStatus\:\:WrittenOff will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Services/Accounting/InvoiceService.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:isInvoiced\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Services/Accounting/PaymentScheduleService.php
+
+		-
+			message: '#^Cannot call method copy\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Services/Auth/PasswordPolicy.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Services/BookingSettlement.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Services/BookingSettlement.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,mixed\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Services/BookingSettlement.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Services/BookingSettlement.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Services/BookingSettlement.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$booth_assignment\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Exhibitors/ExhibitorFulfillmentService.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$event\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Exhibitors/ExhibitorFulfillmentService.php
+
+		-
+			message: '#^Parameter \#1 \$groupBy of method Illuminate\\Support\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:groupBy\(\) expects \(callable\(Illuminate\\Database\\Eloquent\\Model, int\)\: string\)\|list\<Closure\|string\>\|string, Closure\(App\\Models\\ExhibitorOrderItem\)\: string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Exhibitors/ExhibitorFulfillmentService.php
+
+		-
+			message: '#^Method App\\Services\\Handbook\:\:all\(\) should return Illuminate\\Support\\Collection\<int, array\{slug\: string, title\: string, section\: string, order\: int, html\: string, toc\: list\<array\{depth\: int, text\: string, id\: string\}\>\}\> but returns Illuminate\\Support\\Collection\<int, non\-empty\-array\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/Handbook.php
+
+		-
+			message: '#^Method App\\Services\\Handbook\:\:navTree\(\) should return Illuminate\\Support\\Collection\<int, array\{section\: string, docs\: list\<array\{slug\: string, title\: string, order\: int\}\>\}\> but returns Illuminate\\Support\\Collection\<int, array\{section\: string, docs\: array\<int, array\{slug\: string, title\: string, order\: int\}\>\}\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Services/Handbook.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Services/Operations/OpsCalendarBuilder.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: app/Services/Operations/OpsCalendarBuilder.php
+
+		-
+			message: '#^Offset ''cancelled''\|''completed''\|''definite''\|''hold''\|''inquiry''\|''tentative'' on array\{hold\: array\{''\#f59e0b'', ''status\-hold''\}, tentative\: array\{''\#0ea5e9'', ''status\-tentative''\}, inquiry\: array\{''\#94a3b8'', ''status\-inquiry''\}, definite\: array\{''\#10b981'', ''status\-definite''\}, completed\: array\{''\#8b5cf6'', ''status\-completed''\}, cancelled\: array\{''\#9ca3af'', ''status\-cancelled''\}\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: app/Services/Operations/OpsCalendarBuilder.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Booking\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Services/Operations/OpsCalendarBuilder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Services/Operations/OpsCalendarBuilder.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type App\\Enums\\BookingStatus\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: app/Services/Operations/OpsCalendarBuilder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Operations/OpsScheduleBuilder.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\BookingSpace\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Services/Operations/OpsScheduleBuilder.php
+
+		-
+			message: '#^Parameter \#1 \$when of method App\\Services\\Operations\\OpsScheduleBuilder\:\:dayIndex\(\) expects DateTimeInterface\|null, string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Services/Operations/OpsScheduleBuilder.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between string and App\\Enums\\PaymentStatus\:\:Captured will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Payments/OrderPaymentService.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Services/Payments/OrderPaymentService.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Services/RecurringTemplateMaterializer.php
+
+		-
+			message: '#^Empty array passed to foreach\.$#'
+			identifier: foreach.emptyArray
+			count: 1
+			path: app/Services/RecurringTemplateMaterializer.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Services/Signing/ContractDispatcher.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$venue_id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Signing/ContractDispatcher.php
+
+		-
+			message: '#^Parameter \#1 \$booking of method App\\Services\\Signing\\ContractDispatcher\:\:renderForBookingTemplate\(\) expects App\\Models\\Booking, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Signing/ContractDispatcher.php
+
+		-
+			message: '#^Parameter \#1 \$booking of method App\\Services\\Signing\\ContractDispatcher\:\:renderForBookingTemplate\(\) expects App\\Models\\Booking, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Signing/ContractDispatcher.php
+
+		-
+			message: '#^Parameter \#2 \$template of method App\\Services\\Signing\\ContractDispatcher\:\:renderForBooking\(\) expects App\\Models\\DocumentTemplate, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/Signing/ContractDispatcher.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between Illuminate\\Database\\Eloquent\\Model and null will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Services/Signing/ContractDispatcher.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between null and null will always evaluate to false\.$#'
+			identifier: notIdentical.alwaysFalse
+			count: 1
+			path: app/Services/Signing/ContractDispatcher.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$email\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Signing/FakeSignatureProvider.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Services/Signing/FakeSignatureProvider.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Signing/FakeSignatureProvider.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Services/Signing/FakeSignatureProvider.php
+
+		-
+			message: '#^Cannot access property \$value on string\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: app/Services/Spaces/SpaceFinder.php
+
+		-
+			message: '#^Using nullsafe property access on non\-nullable type string\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: app/Services/Spaces/SpaceFinder.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model&Spatie\\MediaLibrary\\HasMedia\:\:addMediaFromRequest\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Support/DisplayImage.php
+
+		-
+			message: '#^Comparison operation "\>\=" between int\<80500, 80599\> and 80500 is always true\.$#'
+			identifier: greaterOrEqual.alwaysTrue
+			count: 2
+			path: config/database.php
+
+		-
+			message: '#^Class Spatie\\MediaLibraryPro\\Models\\TemporaryUpload not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: config/media-library.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: database/seeders/ContractsSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: database/seeders/ContractsSeeder.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>name" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: database/seeders/ContractsSeeder.php
+
+		-
+			message: '#^Parameter \#1 \$invoice of method App\\Services\\Accounting\\InvoiceService\:\:refreshFromSource\(\) expects App\\Models\\Invoice, Illuminate\\Database\\Eloquent\\Model\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/InvoicesBackfillSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: database/seeders/LayoutTemplatesSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: database/seeders/OutlinesSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: database/seeders/ResourceInventorySeeder.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 2
+			path: database/seeders/SentinelBayBookingsSeeder.php
+
+		-
+			message: '#^Offset ''spaces'' on array\{name\: string, venue\: string, spaces\: list\<string\>, client\: string, kind\: string, status\: App\\Enums\\BookingStatus, start\: string, end\: string, \.\.\.\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: database/seeders/SentinelBayBookingsSeeder.php
+
+		-
+			message: '#^Parameter \#1 \$space of method Database\\Seeders\\SentinelBayBookingsSeeder\:\:rateFor\(\) expects App\\Models\\Space, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
+			count: 1
+			path: database/seeders/SentinelBayBookingsSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 4
+			path: database/seeders/SentinelBayBookingsSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: database/seeders/SentinelBayBrandingSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: database/seeders/SentinelBayExhibitorsSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 3
+			path: database/seeders/SentinelBaySalesSeeder.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 1
+			path: database/seeders/SentinelBayUsersSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: database/seeders/SentinelBayUsersSeeder.php
+
+		-
+			message: '#^Cannot access property \$id on null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: database/seeders/WorkOrdersSeeder.php
+
+		-
+			message: '#^Cannot access property \$name on null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: database/seeders/WorkOrdersSeeder.php
+
+		-
+			message: '#^Cannot access property \$sku on null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: database/seeders/WorkOrdersSeeder.php
+
+		-
+			message: '#^Expression on left side of \?\? is always null\.$#'
+			identifier: nullCoalesce.expr
+			count: 2
+			path: database/seeders/WorkOrdersSeeder.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between App\\Enums\\WorkOrderStatus\:\:Assigned\|App\\Enums\\WorkOrderStatus\:\:InProgress\|App\\Enums\\WorkOrderStatus\:\:Open and App\\Enums\\WorkOrderStatus\:\:Completed will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 2
+			path: database/seeders/WorkOrdersSeeder.php
+
+		-
+			message: '#^Using nullsafe method call on non\-nullable type Illuminate\\Console\\Command\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 4
+			path: database/seeders/WorkOrdersSeeder.php
