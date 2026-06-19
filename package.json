@@ -54,7 +54,7 @@
         "@fullcalendar/interaction": "^6.1.20",
         "@fullcalendar/list": "^6.1.20",
         "@fullcalendar/react": "^6.1.20",
-        "@fullcalendar/timegrid": "^6.1.20",
+        "@fullcalendar/timegrid": "^6.1.21",
         "@inertiajs/react": "^3.3.1",
         "@inertiajs/vite": "^3.3.1",
         "@laravel/passkeys": "^0.2.0",
