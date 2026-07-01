@@ -12,12 +12,12 @@ it('reads safe-mode flags from config', function () {
     config([
         'velsa.safe_mode' => true,
         'velsa.safe_mode_label' => 'TRAINING',
-        'velsa.safe_mode_mail_to' => 'trainer@county.gov',
+        'velsa.safe_mode_mail_to' => 'trainer@example.gov',
     ]);
 
     expect(SafeMode::enabled())->toBeTrue()
         ->and(SafeMode::label())->toBe('TRAINING')
-        ->and(SafeMode::mailRecipient())->toBe('trainer@county.gov');
+        ->and(SafeMode::mailRecipient())->toBe('trainer@example.gov');
 });
 
 it('forces the fake signature provider in safe mode', function () {
@@ -36,7 +36,7 @@ it('suppresses outbound mail to the log channel when no sink is set', function (
 });
 
 it('redirects (not suppresses) when a sink address is configured', function () {
-    config(['velsa.safe_mode' => true, 'velsa.safe_mode_mail_to' => 'sink@county.gov', 'mail.default' => 'smtp']);
+    config(['velsa.safe_mode' => true, 'velsa.safe_mode_mail_to' => 'sink@example.gov', 'mail.default' => 'smtp']);
 
     SafeMode::applyMail();
 

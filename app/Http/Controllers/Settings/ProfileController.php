@@ -50,6 +50,11 @@ class ProfileController extends Controller
     {
         $user = $request->user();
 
+        // Emergency (break-glass) accounts may never be self-deleted - the
+        // operator must always retain an administrative path back in
+        // (STIG APSC-DV-000310).
+        abort_if($user->isEmergency(), 403, 'Emergency accounts cannot be deleted.');
+
         Auth::logout();
 
         $user->delete();

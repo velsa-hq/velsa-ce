@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Concerns\ReasonValidationRules;
+use App\Concerns\RefundValidationRules;
 use App\Enums\BookingStatus;
 use App\Enums\ExhibitorOrderStatus;
 use App\Enums\PaymentStatus;
 use App\Enums\WorkOrderStatus;
+use App\Http\Requests\ChargeCardRequest;
+use App\Http\Requests\RecordManualPaymentRequest;
 use App\Mail\ExhibitorPortalLink;
 use App\Models\Booking;
 use App\Models\EquipmentItem;
@@ -32,6 +36,9 @@ use RuntimeException;
 
 class ExhibitorController extends Controller
 {
+    use ReasonValidationRules;
+    use RefundValidationRules;
+
     public function index(Request $request): Response
     {
         $this->authorize('viewAny', Exhibitor::class);
@@ -398,14 +405,11 @@ class ExhibitorController extends Controller
         ]);
     }
 
-    public function capturePayment(Request $request, Exhibitor $exhibitor, ExhibitorOrder $order, OrderPaymentService $payments): RedirectResponse
+    public function capturePayment(ChargeCardRequest $request, Exhibitor $exhibitor, ExhibitorOrder $order, OrderPaymentService $payments): RedirectResponse
     {
         abort_unless((bool) $request->user()?->hasVenuePermission('payments.process'), 403);
 
-        $data = $request->validate([
-            'card_token' => ['required', 'string', 'max:120'],
-            'amount_cents' => ['nullable', 'integer', 'min:1'],
-        ]);
+        $data = $request->validated();
 
         $payment = $payments->charge($order, $data['card_token'], $data['amount_cents'] ?? null);
 
@@ -422,16 +426,11 @@ class ExhibitorController extends Controller
         ]);
     }
 
-    public function recordManualPayment(Request $request, Exhibitor $exhibitor, ExhibitorOrder $order, OrderPaymentService $payments): RedirectResponse
+    public function recordManualPayment(RecordManualPaymentRequest $request, Exhibitor $exhibitor, ExhibitorOrder $order, OrderPaymentService $payments): RedirectResponse
     {
         abort_unless((bool) $request->user()?->hasVenuePermission('payments.process'), 403);
 
-        $data = $request->validate([
-            'amount_cents' => ['required', 'integer', 'min:1'],
-            'method' => ['required', 'string', 'in:check,wire,cash,ach'],
-            'reference' => ['nullable', 'string', 'max:120'],
-            'note' => ['nullable', 'string', 'max:500'],
-        ]);
+        $data = $request->validated();
 
         try {
             $payment = $payments->recordManual(
@@ -456,10 +455,7 @@ class ExhibitorController extends Controller
     {
         abort_unless((bool) $request->user()?->hasVenuePermission('payments.refund'), 403);
 
-        $data = $request->validate([
-            'amount_cents' => ['required', 'integer', 'min:1'],
-            'reason' => ['nullable', 'string', 'max:500'],
-        ]);
+        $data = $request->validate($this->refundRules());
 
         try {
             $payments->refund($payment, (int) $data['amount_cents'], $data['reason'] ?? null, $request->user()->id);

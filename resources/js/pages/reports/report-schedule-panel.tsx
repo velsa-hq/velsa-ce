@@ -236,7 +236,7 @@ export default function ReportSchedulePanel({
                         <span className="font-medium">Recipients</span>
                         <Input
                             type="text"
-                            placeholder="finance@county.gov, director@county.gov"
+                            placeholder="finance@example.gov, director@example.gov"
                             value={recipients}
                             onChange={(e) => setRecipients(e.target.value)}
                         />

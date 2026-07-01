@@ -20,7 +20,7 @@ it('creates a schedule from the report page, snapshotting filters', function () 
         'frequency' => 'weekly',
         'day_of_week' => 1,
         'hour' => 6,
-        'recipients' => ['finance@county.gov'],
+        'recipients' => ['finance@example.gov'],
         'as_of' => '2026-06-01', // report filter, captured with the schedule
     ])->assertRedirect();
 
@@ -29,7 +29,7 @@ it('creates a schedule from the report page, snapshotting filters', function () 
     expect($schedule->report_slug)->toBe('balance-sheet')
         ->and($schedule->frequency)->toBe('weekly')
         ->and($schedule->day_of_week)->toBe(1)
-        ->and($schedule->recipients)->toBe(['finance@county.gov'])
+        ->and($schedule->recipients)->toBe(['finance@example.gov'])
         ->and($schedule->params_json['as_of'] ?? null)->toBe('2026-06-01');
 });
 

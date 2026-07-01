@@ -41,6 +41,7 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
             'sso_provisioned_at' => 'datetime',
             'password_changed_at' => 'datetime',
             'force_password_change' => 'boolean',
+            'is_emergency' => 'boolean',
             'dashboard_preferences' => 'array',
             'whats_new_seen_at' => 'datetime',
         ];
@@ -163,6 +164,15 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     public function isDisabled(): bool
     {
         return $this->disabled_reason !== null;
+    }
+
+    /**
+     * Break-glass account that may not be disabled or self-deleted, so an
+     * administrative path back in always survives (STIG APSC-DV-000310).
+     */
+    public function isEmergency(): bool
+    {
+        return (bool) $this->is_emergency;
     }
 
     /**

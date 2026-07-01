@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Concerns\ReasonValidationRules;
 use App\Models\ChartOfAccount;
 use App\Models\ExportTemplate;
-use App\Models\FiscalYear;
 use App\Models\Fund;
 use App\Models\JournalEntry;
 use App\Models\LedgerExportBatch;
 use App\Models\Venue;
 use App\Services\Accounting\BatchDeliveryService;
+use App\Services\Accounting\JournalEntryException;
+use App\Services\Accounting\JournalEntryService;
 use App\Services\Accounting\LedgerExporter;
 use App\Services\AuditLogger;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -23,6 +23,8 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AccountingController extends Controller
 {
+    use ReasonValidationRules;
+
     public function journal(Request $request): Response
     {
         $venueId = $request->integer('venue_id') ?: null;
@@ -140,7 +142,7 @@ class AccountingController extends Controller
      * whole entry can be reversed as a unit. Gated on accounting.post_journal;
      * entries flow into the next export batch like any system entry.
      */
-    public function storeEntry(Request $request): RedirectResponse
+    public function storeEntry(Request $request, JournalEntryService $journal): RedirectResponse
     {
         $data = $request->validate([
             'posted_on' => ['nullable', 'date'],
@@ -153,57 +155,16 @@ class AccountingController extends Controller
             'lines.*.credit_cents' => ['nullable', 'integer', 'min:0'],
         ]);
 
-        $postedOn = $data['posted_on'] ?? now()->toDateString();
-
-        $year = FiscalYear::forDate(new \DateTimeImmutable($postedOn));
-        if ($year !== null && $year->is_closed) {
-            throw ValidationException::withMessages([
-                'posted_on' => "Fiscal year '{$year->label}' is closed; entries can't be posted into it.",
-            ]);
-        }
-
-        // each line is a debit XOR a credit; the entry must balance and be
-        // nonzero - the invariant the ledger depends on
-        $debits = 0;
-        $credits = 0;
-        foreach ($data['lines'] as $i => $line) {
-            $debit = (int) ($line['debit_cents'] ?? 0);
-            $credit = (int) ($line['credit_cents'] ?? 0);
-            if (($debit > 0) === ($credit > 0)) {
-                throw ValidationException::withMessages([
-                    "lines.$i" => 'Each line must be either a debit or a credit, not both or neither.',
-                ]);
-            }
-            $debits += $debit;
-            $credits += $credit;
-        }
-        if ($debits !== $credits || $debits === 0) {
-            throw ValidationException::withMessages([
-                'lines' => 'Debits must equal credits and total more than zero.',
-            ]);
-        }
-
-        $group = (string) Str::uuid();
-
         try {
-            DB::transaction(function () use ($data, $postedOn, $group, $request): void {
-                foreach ($data['lines'] as $line) {
-                    JournalEntry::post([
-                        'venue_id' => $data['venue_id'] ?? null,
-                        'entry_group' => $group,
-                        'account_code' => $line['account_code'],
-                        'fund_code' => $line['fund_code'] ?? null,
-                        'description' => $data['description'],
-                        'debit_cents' => (int) ($line['debit_cents'] ?? 0),
-                        'credit_cents' => (int) ($line['credit_cents'] ?? 0),
-                        'posted_on' => $postedOn,
-                        'posted_by_user_id' => $request->user()?->id,
-                    ]);
-                }
-            });
-        } catch (\RuntimeException $e) {
-            // model-level guards (non-postable / inactive account or fund)
-            throw ValidationException::withMessages(['lines' => $e->getMessage()]);
+            $journal->postManualEntry(
+                $data['lines'],
+                $data['description'],
+                $data['venue_id'] ?? null,
+                $data['posted_on'] ?? null,
+                $request->user()?->id,
+            );
+        } catch (JournalEntryException $e) {
+            throw ValidationException::withMessages([$e->field => $e->getMessage()]);
         }
 
         return back()->with('toast', ['type' => 'success', 'message' => 'Journal entry posted.']);
@@ -215,37 +176,13 @@ class AccountingController extends Controller
      * reversal, never by editing (the model is append-only). System entries
      * reverse through their own flows.
      */
-    public function reverseEntry(Request $request, JournalEntry $journalEntry): RedirectResponse
+    public function reverseEntry(Request $request, JournalEntry $journalEntry, JournalEntryService $journal): RedirectResponse
     {
         abort_if($journalEntry->entry_group === null, 422, 'Only manually-posted entries can be reversed here.');
 
-        $legs = JournalEntry::query()->where('entry_group', $journalEntry->entry_group)->get();
-
-        $alreadyReversed = JournalEntry::query()
-            ->whereIn('reversed_entry_id', $legs->pluck('id'))
-            ->exists();
-        if ($alreadyReversed) {
+        if ($journal->reverse($journalEntry, $request->user()?->id) === null) {
             return back()->with('toast', ['type' => 'error', 'message' => 'This entry has already been reversed.']);
         }
-
-        $group = (string) Str::uuid();
-
-        DB::transaction(function () use ($legs, $group, $request): void {
-            foreach ($legs as $leg) {
-                JournalEntry::post([
-                    'venue_id' => $leg->venue_id,
-                    'entry_group' => $group,
-                    'reversed_entry_id' => $leg->id,
-                    'account_code' => $leg->account_code,
-                    'fund_code' => $leg->fund_code,
-                    'description' => 'Reversal: '.$leg->description,
-                    'debit_cents' => $leg->credit_cents,
-                    'credit_cents' => $leg->debit_cents,
-                    'posted_on' => now()->toDateString(),
-                    'posted_by_user_id' => $request->user()?->id,
-                ]);
-            }
-        });
 
         return back()->with('toast', ['type' => 'success', 'message' => 'Entry reversed.']);
     }
@@ -457,36 +394,15 @@ class AccountingController extends Controller
      * is kept for the audit trail; only the export claim is released, not the
      * postings.
      */
-    public function voidBatch(Request $request, LedgerExportBatch $batch, AuditLogger $auditLogger): RedirectResponse
+    public function voidBatch(Request $request, LedgerExportBatch $batch, JournalEntryService $journal): RedirectResponse
     {
         abort_if($batch->isVoided(), 422, 'This batch has already been voided.');
 
         $validated = $request->validate([
-            'reason' => ['required', 'string', 'max:500'],
+            'reason' => $this->reasonRule(true),
         ]);
 
-        DB::transaction(function () use ($batch, $validated, $request, $auditLogger) {
-            $detached = JournalEntry::query()
-                ->where('export_batch_id', $batch->id)
-                ->update(['export_batch_id' => null]);
-
-            $batch->update([
-                'status' => 'voided',
-                'voided_at' => now(),
-                'void_reason' => $validated['reason'],
-                'voided_by_user_id' => $request->user()?->id,
-            ]);
-
-            $auditLogger->record(
-                eventType: 'ledger.batch_voided',
-                subject: $batch->fresh(),
-                payload: [
-                    'period' => $batch->period,
-                    'entries_detached' => $detached,
-                    'reason' => $validated['reason'],
-                ],
-            );
-        });
+        $journal->voidBatch($batch, $validated['reason'], $request->user()?->id);
 
         return redirect()
             ->route('accounting.journal')

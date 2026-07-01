@@ -9,6 +9,7 @@ use App\Models\EquipmentItem;
 use App\Models\RatePackage;
 use App\Models\Space;
 use App\Models\Venue;
+use App\Support\Money;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -124,7 +125,7 @@ class RatePackageController extends Controller
             'name' => $data['name'],
             'kind' => $data['kind'],
             'currency' => 'USD',
-            'price_cents' => (int) round(((float) $data['price']) * 100),
+            'price_cents' => Money::toCents($data['price']),
             'effective_from' => $data['effective_from'],
             'effective_to' => $data['effective_to'] ?? null,
             'is_active' => $data['is_active'] ?? true,

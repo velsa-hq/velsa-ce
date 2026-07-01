@@ -11,7 +11,6 @@ use App\Models\Booking;
 use App\Models\BookingNarrative;
 use App\Models\BookingSpace;
 use App\Models\Client;
-use App\Models\Contact;
 use App\Models\Contract;
 use App\Models\EventKind;
 use App\Models\EventOutline;
@@ -19,6 +18,8 @@ use App\Models\Lead;
 use App\Models\StaffAssignment;
 use App\Models\User;
 use App\Models\Venue;
+use App\Services\Accounting\ValueFormatter;
+use App\Services\Bookings\BookingWriter;
 use App\Services\BookingSettlement;
 use App\Services\SystemSettings\SystemSettings;
 use App\Support\DateFormatter;
@@ -175,76 +176,12 @@ class BookingController extends Controller
         ]);
     }
 
-    public function store(BookingStoreRequest $request): RedirectResponse
+    public function store(BookingStoreRequest $request, BookingWriter $writer): RedirectResponse
     {
         $data = $request->validated();
-        $totalCents = isset($data['total_dollars'])
-            ? (int) round(((float) $data['total_dollars']) * 100)
-            : 0;
 
         try {
-            $booking = DB::transaction(function () use ($data, $request, $totalCents) {
-                $clientId = $data['client_id'] ?? null;
-
-                if ($clientId === null && ! empty($data['new_client']['name'])) {
-                    $newClient = $data['new_client'];
-                    $client = Client::query()->create([
-                        'name' => $newClient['name'],
-                        'type' => $newClient['type'],
-                    ]);
-
-                    if (! empty($newClient['email'])) {
-                        $contact = Contact::query()->create([
-                            'client_id' => $client->id,
-                            'name' => $newClient['name'],
-                            'email' => $newClient['email'],
-                            'is_primary' => true,
-                        ]);
-                        $client->update(['primary_contact_id' => $contact->id]);
-                    }
-
-                    $clientId = $client->id;
-                }
-
-                $booking = Booking::query()->create([
-                    'venue_id' => $data['venue_id'],
-                    'client_id' => $clientId,
-                    'lead_id' => $data['lead_id'] ?? null,
-                    'owner_user_id' => $request->user()->id,
-                    'name' => $data['name'],
-                    'kind' => $data['kind'],
-                    'status' => $data['status'],
-                    'start_at' => $data['start_at'],
-                    'end_at' => $data['end_at'],
-                    'total_cents' => $totalCents,
-                    'attendance_estimate' => $data['attendance_estimate'] ?? null,
-                    'notes' => $data['notes'] ?? null,
-                ]);
-
-                foreach ($data['spaces'] as $spaceId) {
-                    BookingSpace::query()->create([
-                        'booking_id' => $booking->id,
-                        'space_id' => $spaceId,
-                        'start_at' => $data['start_at'],
-                        'end_at' => $data['end_at'],
-                        'setup_minutes_before' => 60,
-                        'teardown_minutes_after' => 60,
-                    ]);
-                }
-
-                // If this booking was converted from a lead, stamp the lead.
-                if (! empty($data['lead_id'])) {
-                    Lead::query()
-                        ->where('id', $data['lead_id'])
-                        ->whereNull('converted_booking_id')
-                        ->update([
-                            'converted_at' => now(),
-                            'converted_booking_id' => $booking->id,
-                        ]);
-                }
-
-                return $booking;
-            });
+            $booking = $writer->create($data, $request->user());
         } catch (RuntimeException $e) {
             return back()
                 ->withInput()
@@ -480,7 +417,7 @@ class BookingController extends Controller
                 'status' => $booking->status?->value,
                 'start_at' => DateFormatter::editDateTime($booking->start_at),
                 'end_at' => DateFormatter::editDateTime($booking->end_at),
-                'total_dollars' => $booking->total_cents > 0 ? number_format($booking->total_cents / 100, 2, '.', '') : null,
+                'total_dollars' => $booking->total_cents > 0 ? ValueFormatter::apply($booking->total_cents, 'money:dot') : null,
                 'attendance_estimate' => $booking->attendance_estimate,
                 'notes' => $booking->notes,
                 'cancel_reason' => $booking->cancel_reason,
@@ -506,61 +443,12 @@ class BookingController extends Controller
         ]);
     }
 
-    public function update(BookingUpdateRequest $request, Booking $booking): RedirectResponse
+    public function update(BookingUpdateRequest $request, Booking $booking, BookingWriter $writer): RedirectResponse
     {
         $data = $request->validated();
-        $totalCents = isset($data['total_dollars'])
-            ? (int) round(((float) $data['total_dollars']) * 100)
-            : 0;
 
         try {
-            DB::transaction(function () use ($booking, $data, $totalCents) {
-                $booking->update([
-                    'venue_id' => $data['venue_id'],
-                    'client_id' => $data['client_id'],
-                    'name' => $data['name'],
-                    'kind' => $data['kind'],
-                    'status' => $data['status'],
-                    'start_at' => $data['start_at'],
-                    'end_at' => $data['end_at'],
-                    'total_cents' => $totalCents,
-                    'attendance_estimate' => $data['attendance_estimate'] ?? null,
-                    'notes' => $data['notes'] ?? null,
-                    'cancel_reason' => $data['cancel_reason'] ?? null,
-                ]);
-
-                // Sync spaces: drop ones no longer selected; add new ones.
-                $wanted = array_map('intval', $data['spaces']);
-                $current = $booking->spaces()->pluck('space_id')->all();
-
-                $toRemove = array_diff($current, $wanted);
-                if (! empty($toRemove)) {
-                    $booking->spaces()->whereIn('space_id', $toRemove)->delete();
-                }
-
-                $toAdd = array_diff($wanted, $current);
-                foreach ($toAdd as $spaceId) {
-                    BookingSpace::query()->create([
-                        'booking_id' => $booking->id,
-                        'space_id' => $spaceId,
-                        'start_at' => $data['start_at'],
-                        'end_at' => $data['end_at'],
-                        'setup_minutes_before' => 60,
-                        'teardown_minutes_after' => 60,
-                    ]);
-                }
-
-                // Existing spaces that stayed: realign their time window to the
-                // booking's new start/end so overlap checks reflect the move.
-                $toUpdate = array_intersect($current, $wanted);
-                if (! empty($toUpdate)) {
-                    foreach ($booking->spaces()->whereIn('space_id', $toUpdate)->get() as $bs) {
-                        $bs->start_at = $data['start_at'];
-                        $bs->end_at = $data['end_at'];
-                        $bs->save();
-                    }
-                }
-            });
+            $writer->update($booking, $data);
         } catch (RuntimeException $e) {
             return back()
                 ->withInput()

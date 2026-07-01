@@ -212,6 +212,24 @@ it('exposes the refund endpoint via the admin controller', function () {
     expect($this->payment->fresh()->refunded_amount_cents)->toBe(30_00);
 });
 
+it('rejects a non-positive refund amount at validation before touching the service', function () {
+    $invoice = Invoice::query()
+        ->where('invoiceable_type', ExhibitorOrder::class)
+        ->where('invoiceable_id', $this->order->id)
+        ->firstOrFail();
+    $admin = grantSuperAdmin(User::factory()->create());
+
+    $this->actingAs($admin)
+        ->from("/admin/invoices/{$invoice->number}")
+        ->post(
+            "/admin/invoices/{$invoice->number}/payments/{$this->payment->id}/refund",
+            ['amount_cents' => 0],
+        )
+        ->assertSessionHasErrors('amount_cents');
+
+    expect($this->payment->fresh()->refunded_at)->toBeNull();
+});
+
 it('blocks refund on a payment that belongs to a different invoice', function () {
     $otherOrder = ExhibitorOrder::factory()->create();
     $otherInvoice = Invoice::factory()->create([

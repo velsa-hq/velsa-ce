@@ -10,7 +10,9 @@ use App\Models\Activity;
 use App\Models\Client;
 use App\Models\Lead;
 use App\Models\Venue;
+use App\Services\Accounting\ValueFormatter;
 use App\Services\Pipeline\PipelineStageConfig;
+use App\Support\Money;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -39,7 +41,7 @@ class LeadController extends Controller
     {
         $data = $request->validated();
         $cents = isset($data['estimated_value_dollars'])
-            ? (int) round(((float) $data['estimated_value_dollars']) * 100)
+            ? Money::toCents($data['estimated_value_dollars'])
             : 0;
         $stage = LeadStage::from($data['stage']);
 
@@ -147,7 +149,7 @@ class LeadController extends Controller
                 'client_id' => $lead->client_id,
                 'venue_id' => $lead->venue_id,
                 'estimated_value_dollars' => $lead->estimated_value_cents > 0
-                    ? number_format($lead->estimated_value_cents / 100, 2, '.', '')
+                    ? ValueFormatter::apply($lead->estimated_value_cents, 'money:dot')
                     : null,
                 'probability' => $lead->probability,
                 'expected_close_date' => $lead->expected_close_date?->toDateString(),
@@ -166,7 +168,7 @@ class LeadController extends Controller
     {
         $data = $request->validated();
         $cents = isset($data['estimated_value_dollars'])
-            ? (int) round(((float) $data['estimated_value_dollars']) * 100)
+            ? Money::toCents($data['estimated_value_dollars'])
             : 0;
 
         $lead->update([

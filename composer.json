@@ -42,7 +42,6 @@
         "phpoffice/phpspreadsheet": "^5.7",
         "simshaun/recurr": "^6.0",
         "socialiteproviders/microsoft-azure": "^5.2",
-        "spatie/browsershot": "^5.4",
         "spatie/laravel-medialibrary": "^11",
         "spatie/laravel-pdf": "^2.11",
         "spatie/laravel-permission": "^8.0",
@@ -115,7 +114,7 @@
         ],
         "test:local": [
             "Composer\\Config::disableProcessTimeout",
-            "php -d memory_limit=2G -d pcov.enabled=0 vendor/bin/pest --compact --no-coverage"
+            "PCOV_DISABLED=1 php -d memory_limit=2G -d pcov.enabled=0 vendor/bin/pest --compact --no-coverage"
         ],
         "test:coverage": [
             "@php artisan config:clear --no-ansi",

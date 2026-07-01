@@ -10,6 +10,7 @@ use App\Models\RateCard;
 use App\Models\RateCardEntry;
 use App\Models\Space;
 use App\Models\Venue;
+use App\Support\Money;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -107,8 +108,8 @@ class RateCardController extends Controller
                 'space_id' => $isSpace ? ($e['space_id'] ?? null) : null,
                 'equipment_sku' => $isSpace ? null : ($e['equipment_sku'] ?? null),
                 'unit' => $e['unit'],
-                'rate_cents' => (int) round(((float) $e['rate']) * 100),
-                'min_charge_cents' => (int) round(((float) ($e['min_charge'] ?? 0)) * 100),
+                'rate_cents' => Money::toCents($e['rate']),
+                'min_charge_cents' => Money::toCents($e['min_charge'] ?? 0),
                 'included_hours' => $e['included_hours'] ?? null,
             ]);
         }

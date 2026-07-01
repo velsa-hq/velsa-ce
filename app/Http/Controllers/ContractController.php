@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Concerns\ReasonValidationRules;
 use App\Enums\ContractStatus;
 use App\Enums\TemplateKind;
 use App\Models\Booking;
@@ -18,6 +19,8 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class ContractController extends Controller
 {
+    use ReasonValidationRules;
+
     public function index(Request $request): Response
     {
         $this->authorize('viewAny', Contract::class);
@@ -259,7 +262,7 @@ class ContractController extends Controller
         $this->authorize('create', Contract::class);
 
         $reason = $request->validate([
-            'reason' => ['nullable', 'string', 'max:500'],
+            'reason' => $this->reasonRule(false),
         ])['reason'] ?? null;
 
         try {
@@ -285,7 +288,7 @@ class ContractController extends Controller
         $this->authorize('manage', $contract);
 
         $reason = $request->validate([
-            'reason' => ['nullable', 'string', 'max:500'],
+            'reason' => $this->reasonRule(false),
         ])['reason'] ?? null;
 
         if (! $contract->void($reason)) {

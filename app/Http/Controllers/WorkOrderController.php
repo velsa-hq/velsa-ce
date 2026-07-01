@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Venue;
 use App\Models\WorkOrder;
 use App\Models\WorkOrderItem;
+use App\Services\Accounting\ValueFormatter;
 use App\Services\SystemSettings\SystemSettings;
 use App\Support\DateFormatter;
 use Illuminate\Database\Eloquent\Collection;
@@ -388,7 +389,7 @@ class WorkOrderController extends Controller
             'venue' => $wo->venue?->name,
             'assignee' => $wo->assignee?->name,
             'requester' => $wo->requester?->name,
-            'cost' => $wo->cost_cents !== null ? '$'.number_format($wo->cost_cents / 100, 2) : null,
+            'cost' => $wo->cost_cents !== null ? ValueFormatter::usd($wo->cost_cents) : null,
             'description' => $wo->description,
             'items' => $wo->items->map(fn (WorkOrderItem $i) => [
                 'name' => $i->name,
@@ -397,10 +398,13 @@ class WorkOrderController extends Controller
                 'unit' => $i->unit,
                 'action' => ucfirst(str_replace('_', ' ', (string) $i->action?->value)),
                 'line' => $i->unit_cost_cents !== null
+                    // Left inline: routing through ValueFormatter::usd() narrows the
+                    // inferred type (non-falsy-string -> string) and drifts this
+                    // closure's pre-existing PHPStan map() baseline entry.
                     ? '$'.number_format(($i->unit_cost_cents * $i->quantity) / 100, 2)
                     : null,
             ])->all(),
-            'items_subtotal' => $subtotal > 0 ? '$'.number_format($subtotal / 100, 2) : null,
+            'items_subtotal' => $subtotal > 0 ? ValueFormatter::usd($subtotal) : null,
         ];
     }
 

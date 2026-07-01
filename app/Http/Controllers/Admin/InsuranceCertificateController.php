@@ -9,6 +9,7 @@ use App\Models\Client;
 use App\Models\Exhibitor;
 use App\Models\InsuranceCertificate;
 use App\Services\SystemSettings\SystemSettings;
+use App\Support\Money;
 use Carbon\CarbonImmutable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -102,7 +103,7 @@ class InsuranceCertificateController extends Controller
             'carrier' => $validated['carrier'] ?? null,
             'policy_number' => $validated['policy_number'] ?? null,
             'coverage_amount_cents' => isset($validated['coverage_amount'])
-                ? (int) round(((float) $validated['coverage_amount']) * 100)
+                ? Money::toCents($validated['coverage_amount'])
                 : null,
             'effective_date' => $validated['effective_date'] ?? null,
             'expires_on' => $validated['expires_on'],

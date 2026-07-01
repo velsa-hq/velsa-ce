@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\EquipmentCategory;
 use App\Models\EquipmentItem;
+use App\Support\Money;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -104,9 +105,9 @@ class EquipmentItemController extends Controller
             'name' => $data['name'],
             'description' => $data['description'] ?? null,
             'unit_label' => $data['unit_label'],
-            'unit_price_cents' => (int) round(((float) $data['unit_price']) * 100),
+            'unit_price_cents' => Money::toCents($data['unit_price']),
             'advance_price_cents' => isset($data['advance_price'])
-                ? (int) round(((float) $data['advance_price']) * 100)
+                ? Money::toCents($data['advance_price'])
                 : null,
             'is_active' => $data['is_active'] ?? true,
         ];

@@ -71,6 +71,7 @@ use App\Http\Controllers\VenueController;
 use App\Http\Controllers\Webhooks\DocuSignController;
 use App\Http\Controllers\WhatsNewController;
 use App\Http\Controllers\WorkOrderController;
+use App\Http\Middleware\AdminAccessAuditMiddleware;
 use App\Http\Middleware\EnsureAdminPermission;
 use App\Http\Middleware\EnsureGlobalPermission;
 use App\Http\Middleware\EnsurePasswordCurrent;
@@ -297,7 +298,7 @@ Route::middleware(['auth', 'verified', EnsurePasswordCurrent::class])->group(fun
     Route::get('support', [SupportRequestController::class, 'create'])->name('support.create');
     Route::post('support', [SupportRequestController::class, 'store'])->name('support.store');
 
-    Route::prefix('admin')->name('admin.')->middleware([EnsurePrivilegedMfa::class, EnsureAdminPermission::class])->group(function () {
+    Route::prefix('admin')->name('admin.')->middleware([AdminAccessAuditMiddleware::class, EnsurePrivilegedMfa::class, EnsureAdminPermission::class])->group(function () {
         Route::get('users', [AdminUserController::class, 'index'])->name('users.index');
         Route::get('users/create', [AdminUserController::class, 'create'])->name('users.create');
         Route::post('users', [AdminUserController::class, 'store'])->name('users.store');

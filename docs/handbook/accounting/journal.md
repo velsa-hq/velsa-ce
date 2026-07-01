@@ -19,7 +19,7 @@ The **general journal** (`/accounting`, or **Finance -> Accounting**) is
 the running ledger of every journal entry - the debits and credits
 behind the money the system moves. Most entries post **automatically**
 from operational activity (invoices issued, payments captured, refunds),
-and the page feeds the periodic **export** to the County's accounting
+and the page feeds the periodic **export** to your accounting
 system.
 
 :::video journal-entries

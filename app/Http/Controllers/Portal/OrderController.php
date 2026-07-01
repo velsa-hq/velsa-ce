@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Portal;
 use App\Enums\ExhibitorOrderStatus;
 use App\Enums\PaymentStatus;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ChargeCardRequest;
 use App\Models\EquipmentItem;
 use App\Models\Exhibitor;
 use App\Models\ExhibitorOrder;
 use App\Models\ExhibitorOrderItem;
 use App\Services\Accounting\InvoiceService;
+use App\Services\Accounting\ValueFormatter;
 use App\Services\Payments\OrderPaymentService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -145,13 +147,9 @@ class OrderController extends Controller
      * Card token comes from the client-side iframe; a real processor integration
      * receives it via postMessage from the processor's hosted iframe.
      */
-    public function processPayment(Request $request, ExhibitorOrder $order, OrderPaymentService $payments): RedirectResponse
+    public function processPayment(ChargeCardRequest $request, ExhibitorOrder $order, OrderPaymentService $payments): RedirectResponse
     {
-
-        $data = $request->validate([
-            'card_token' => ['required', 'string', 'max:120'],
-            'amount_cents' => ['nullable', 'integer', 'min:1'],
-        ]);
+        $data = $request->validated();
 
         if ($order->balanceCents() <= 0) {
             return redirect()
@@ -172,7 +170,7 @@ class OrderController extends Controller
                     'type' => 'success',
                     'message' => sprintf(
                         'Payment of $%s captured. Card ending %s.',
-                        number_format($payment->amount_cents / 100, 2),
+                        ValueFormatter::dollars($payment->amount_cents),
                         $payment->last4 ?? '????',
                     ),
                 ]);

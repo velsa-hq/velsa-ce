@@ -28,6 +28,8 @@ return [
 
     'version' => env('APP_VERSION'),
 
+    'role' => env('APP_ROLE', 'web'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

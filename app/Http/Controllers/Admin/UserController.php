@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Concerns\ReasonValidationRules;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Venue;
@@ -20,6 +21,8 @@ use Spatie\Permission\PermissionRegistrar;
 
 class UserController extends Controller
 {
+    use ReasonValidationRules;
+
     public function __construct(protected AuditLogger $audit) {}
 
     /**
@@ -298,8 +301,12 @@ class UserController extends Controller
 
     public function disable(Request $request, User $user): RedirectResponse
     {
+        // Emergency (break-glass) accounts may never be disabled - the operator
+        // must always retain an administrative path back in (STIG APSC-DV-000310).
+        abort_if($user->isEmergency(), 403, 'Emergency accounts cannot be disabled.');
+
         $data = $request->validate([
-            'reason' => ['required', 'string', 'max:500'],
+            'reason' => $this->reasonRule(true),
         ]);
 
         // disable + revoke live sessions (force_logout_at is honored by

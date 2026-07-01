@@ -59,6 +59,7 @@ use App\Services\Signing\SignatureProvider;
 use App\Services\SystemSettings\ConfigOverlay;
 use App\Services\SystemSettings\SystemSettings;
 use App\Services\SystemSettings\SystemSettingsRegistry;
+use App\Support\PdfDriverGuard;
 use App\Support\SafeMode;
 use Carbon\CarbonImmutable;
 use Illuminate\Contracts\Foundation\Application;
@@ -96,7 +97,7 @@ class AppServiceProvider extends ServiceProvider
                 : new FakeSignatureProvider;
         });
 
-        // stub payment processor; the real BluePay driver swaps into the inner
+        // stub payment processor; the real payment driver swaps into the inner
         // slot once credentials + hosted-iframe tokenization are wired. the
         // SafeModePaymentProcessor decorator never delegates in safe mode, so a
         // non-prod instance can't charge a real account whatever driver is bound.
@@ -151,6 +152,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->configureDefaults();
         $this->applySystemSettingsOverlay();
+
+        // fail loud at boot if a deployed env is set to a PDF driver the image
+        // can't run (only Gotenberg ships) rather than 500-ing every PDF route
+        PdfDriverGuard::enforce($this->app->environment(), config('laravel-pdf.driver'));
 
         // safe mode: neutralize outbound email (drivers are Faked in register())
         SafeMode::applyMail();

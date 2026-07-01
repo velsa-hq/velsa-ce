@@ -8,8 +8,14 @@ return [
     /*
      * The default driver to use for PDF generation.
      * Supported: "browsershot", "cloudflare", "dompdf", "gotenberg", "chrome"
+     *
+     * Defaults to "gotenberg" because that is the only PDF engine bundled in
+     * the deployed Velsa runtime image (no Node/Chromium for browsershot, no
+     * dompdf/weasyprint binaries). An environment that forgets to set
+     * LARAVEL_PDF_DRIVER therefore stays deploy-safe instead of 500-ing every
+     * PDF route. PdfDriverGuard enforces this invariant in non-local envs.
      */
-    'driver' => env('LARAVEL_PDF_DRIVER', 'browsershot'),
+    'driver' => env('LARAVEL_PDF_DRIVER', 'gotenberg'),
 
     /*
      * Render caching. When you call `->cache()` on a PDF, the generated

@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Concerns\ReasonValidationRules;
+use App\Concerns\RefundValidationRules;
 use App\Enums\InvoiceStatus;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RecordManualPaymentRequest;
 use App\Models\Booking;
 use App\Models\Exhibitor;
 use App\Models\ExhibitorOrder;
 use App\Models\ExhibitorPayment;
 use App\Models\Invoice;
 use App\Services\Accounting\InvoiceService;
+use App\Services\Accounting\ValueFormatter;
 use App\Services\Payments\OrderPaymentService;
 use App\Services\SystemSettings\SystemSettings;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 use Inertia\Response;
 use Spatie\LaravelPdf\Facades\Pdf;
@@ -22,6 +25,9 @@ use Spatie\LaravelPdf\PdfBuilder;
 
 class InvoiceController extends Controller
 {
+    use ReasonValidationRules;
+    use RefundValidationRules;
+
     public function index(Request $request): Response
     {
         $status = $request->string('status')->toString() ?: null;
@@ -190,17 +196,12 @@ class InvoiceController extends Controller
      * PaymentCaptured, which drives journal entries + receipt + invoice refresh.
      */
     public function recordPayment(
-        Request $request,
+        RecordManualPaymentRequest $request,
         Invoice $invoice,
         OrderPaymentService $payments,
         InvoiceService $invoices,
     ): RedirectResponse {
-        $data = $request->validate([
-            'amount_cents' => ['required', 'integer', 'min:1'],
-            'method' => ['required', Rule::in(['check', 'wire', 'cash', 'ach'])],
-            'reference' => ['nullable', 'string', 'max:120'],
-            'note' => ['nullable', 'string', 'max:500'],
-        ]);
+        $data = $request->validated();
 
         $source = $invoice->invoiceable;
 
@@ -235,7 +236,7 @@ class InvoiceController extends Controller
             'type' => 'success',
             'message' => sprintf(
                 'Recorded $%s %s payment.',
-                number_format($data['amount_cents'] / 100, 2),
+                ValueFormatter::dollars($data['amount_cents']),
                 $data['method'],
             ),
         ]);
@@ -258,10 +259,7 @@ class InvoiceController extends Controller
             ]);
         }
 
-        $data = $request->validate([
-            'amount_cents' => ['required', 'integer', 'min:1'],
-            'reason' => ['nullable', 'string', 'max:500'],
-        ]);
+        $data = $request->validate($this->refundRules());
 
         try {
             $invoices->refundInvoice(
@@ -278,7 +276,7 @@ class InvoiceController extends Controller
             'type' => 'success',
             'message' => sprintf(
                 'Refunded $%s on invoice %s.',
-                number_format($data['amount_cents'] / 100, 2),
+                ValueFormatter::dollars($data['amount_cents']),
                 $invoice->number,
             ),
         ]);
@@ -307,10 +305,7 @@ class InvoiceController extends Controller
             abort(404);
         }
 
-        $data = $request->validate([
-            'amount_cents' => ['required', 'integer', 'min:1'],
-            'reason' => ['nullable', 'string', 'max:500'],
-        ]);
+        $data = $request->validate($this->refundRules());
 
         try {
             $payments->refund(
@@ -327,7 +322,7 @@ class InvoiceController extends Controller
             'type' => 'success',
             'message' => sprintf(
                 'Refunded $%s on payment #%d.',
-                number_format($data['amount_cents'] / 100, 2),
+                ValueFormatter::dollars($data['amount_cents']),
                 $payment->id,
             ),
         ]);
@@ -340,7 +335,7 @@ class InvoiceController extends Controller
     public function writeOff(Request $request, Invoice $invoice, InvoiceService $service): RedirectResponse
     {
         $data = $request->validate([
-            'reason' => ['required', 'string', 'max:500'],
+            'reason' => $this->reasonRule(true),
         ]);
 
         try {
@@ -409,7 +404,7 @@ class InvoiceController extends Controller
     public function void(Request $request, Invoice $invoice, InvoiceService $service): RedirectResponse
     {
         $data = $request->validate([
-            'reason' => ['required', 'string', 'max:500'],
+            'reason' => $this->reasonRule(true),
         ]);
 
         try {

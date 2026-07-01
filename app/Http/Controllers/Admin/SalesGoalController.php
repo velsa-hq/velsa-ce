@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\SalesGoal;
 use App\Models\User;
+use App\Support\Money;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -45,7 +46,7 @@ class SalesGoalController extends Controller
 
         SalesGoal::query()->updateOrCreate(
             ['user_id' => $data['user_id'], 'year' => $data['year'], 'month' => $data['month'] ?? null],
-            ['target_cents' => (int) round(((float) $data['target_dollars']) * 100)],
+            ['target_cents' => Money::toCents($data['target_dollars'])],
         );
 
         return back()->with('toast', ['type' => 'success', 'message' => 'Sales goal saved.']);
@@ -59,7 +60,7 @@ class SalesGoalController extends Controller
             'user_id' => $data['user_id'],
             'year' => $data['year'],
             'month' => $data['month'] ?? null,
-            'target_cents' => (int) round(((float) $data['target_dollars']) * 100),
+            'target_cents' => Money::toCents($data['target_dollars']),
         ]);
 
         return back()->with('toast', ['type' => 'success', 'message' => 'Sales goal updated.']);

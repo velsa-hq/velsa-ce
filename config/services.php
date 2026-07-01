@@ -61,23 +61,4 @@ return [
         'account_id' => env('DOCUSIGN_ACCOUNT_ID'),
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | PDF Renderer (Gotenberg)
-    |--------------------------------------------------------------------------
-    |
-    | The Velsa app image does not bundle Chromium. PDF generation
-    | (invoices, reports, BEOs) is delegated to a Gotenberg sidecar
-    | service via App\Services\PdfRenderer. Locally the sidecar runs
-    | through docker-compose.dev-services.yml; in production it's a
-    | dedicated ECS service reachable only by the app tasks.
-    |
-    */
-
-    'pdf_renderer' => [
-        'url' => env('PDF_RENDERER_URL'),
-        'timeout' => env('PDF_RENDERER_TIMEOUT', 30),
-        'retries' => env('PDF_RENDERER_RETRIES', 0),
-    ],
-
 ];

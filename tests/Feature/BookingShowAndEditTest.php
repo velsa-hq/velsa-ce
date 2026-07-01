@@ -115,6 +115,33 @@ it('syncs spaces on update (drops removed, adds new)', function () {
         ->and(BookingSpace::query()->where('booking_id', $booking->id)->where('space_id', $oldSpace->id)->exists())->toBeFalse();
 });
 
+it('realigns a kept space time window to the booking new start/end on update', function () {
+    [$booking, $venue, $space, $client] = bookingWithSpace();
+    $newStart = now()->addDays(31)->setTime(9, 0);
+    $newEnd = now()->addDays(31)->setTime(17, 0);
+
+    $this->actingAs(bookingTestUser())->put("/bookings/{$booking->id}", [
+        'venue_id' => $venue->id,
+        'client_id' => $client->id,
+        'name' => $booking->name,
+        'kind' => 'conference',
+        'status' => 'tentative',
+        'start_at' => $newStart->toDateTimeString(),
+        'end_at' => $newEnd->toDateTimeString(),
+        'spaces' => [$space->id], // same space kept -> hits the intersect/realign branch
+    ])->assertRedirect("/bookings/{$booking->id}");
+
+    // The kept BookingSpace's window must move to the booking's new times so
+    // overlap checks reflect the move.
+    $bookingSpace = BookingSpace::query()
+        ->where('booking_id', $booking->id)
+        ->where('space_id', $space->id)
+        ->firstOrFail();
+
+    expect($bookingSpace->start_at->toDateTimeString())->toBe($newStart->toDateTimeString())
+        ->and($bookingSpace->end_at->toDateTimeString())->toBe($newEnd->toDateTimeString());
+});
+
 it('rejects an update that overlaps a definite booking on the same space', function () {
     [$bookingA, $venue, $space, $client] = bookingWithSpace();
 

@@ -26,7 +26,7 @@ class OrderPaymentService
     ) {}
 
     /**
-     * Record a payment received outside the BluePay rail (check, wire, cash, ACH).
+     * Record a payment received outside the card-processor rail (check, wire, cash, ACH).
      * Skips the processor but still fires PaymentCaptured so the journal/receipt
      * listeners run.
      */
@@ -148,7 +148,7 @@ class OrderPaymentService
     }
 
     /**
-     * Refund all or part of a captured payment. BluePay payments round-trip the
+     * Refund all or part of a captured payment. Processor-backed payments round-trip the
      * processor; manual payments (check/wire/cash) are internal bookkeeping only.
      * Posts a reversal journal pair (DR AR 1100 / CR Cash 1010), walks back
      * paid_cents, and refreshes the invoice so AR status stays in lockstep.

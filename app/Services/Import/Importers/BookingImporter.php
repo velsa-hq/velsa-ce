@@ -11,6 +11,7 @@ use App\Models\Venue;
 use App\Services\Import\AbstractImporter;
 use App\Services\Import\ImportField;
 use App\Services\Import\ImportRowResult;
+use App\Support\Money;
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
@@ -158,7 +159,7 @@ class BookingImporter extends AbstractImporter
             'start_at' => $start,
             'end_at' => $end,
             'attendance_estimate' => $data['attendance_estimate'] !== null ? (int) $data['attendance_estimate'] : null,
-            'total_cents' => $data['total'] !== null ? (int) round((float) $data['total'] * 100) : 0,
+            'total_cents' => $data['total'] !== null ? Money::toCents($data['total']) : 0,
         ]);
 
         $created = [$booking];

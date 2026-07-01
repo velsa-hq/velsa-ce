@@ -184,7 +184,7 @@ live at a time, and selecting one reveals just its credential fields.
 | Field | Purpose |
 | --- | --- |
 | Site | Your CardConnect site name - the subdomain in your CardPointe URL (e.g. `fts` in `fts.cardconnect.com`). Provided by CardConnect. |
-| Merchant ID (merchid) | The CardPointe merchant ID for the County's merchant account. |
+| Merchant ID (merchid) | The CardPointe merchant ID for your merchant account. |
 | API username | The CardPointe Gateway API username used for HTTP Basic authentication. |
 | **API password** | The CardPointe Gateway API password. Encrypted at rest; **write-only**. |
 | Environment | `UAT` runs against the CardConnect test sandbox; `Production` moves funds. Stay on UAT until the merchant account is verified end to end. |

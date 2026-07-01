@@ -29,7 +29,7 @@ tour_ids:
 
 Velsa's access control is **role-based and venue-scoped**: a user holds one or
 more **roles**, each at a specific **venue**, and each role grants a set of
-**permissions**. The County administers all of this in-app - no vendor
+**permissions**. Your organization administers all of this in-app - no vendor
 involvement for staff changes.
 
 :::video strong-rbac
